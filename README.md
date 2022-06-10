@@ -70,7 +70,7 @@
 - EJS
 - Tailwindcss
 
-## How to use:
+## **How to use:**
 
 
 
