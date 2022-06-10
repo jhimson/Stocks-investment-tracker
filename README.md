@@ -37,8 +37,9 @@
 
 
 ## Route Table:
-
-
+|Name  |Path   |HTTP Verb |Purpose|
+| :----| :-----| :--------| :-----|
+|INDEX |/stocks|GET       |Show all transactions|
 
 ## Technologies Used
 
