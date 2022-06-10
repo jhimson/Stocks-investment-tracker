@@ -40,7 +40,13 @@
 |Name  |Path   |HTTP Verb |Purpose|
 |:----|:-----|:--------|:-----|
 |INDEX |/stocks|GET       |Show all transactions|
+|SHOW |/stocks/:id|GET       |Show the stock transaction details|
+|EDIT |/stocks/edit/:id|GET    |Shows the form for the user to edit the transaction|
 |NEW |/stocks/new|POST    |Create new transactions|
+|UPDATE |/stocks/:id|PUT    |Updates the transaction with the given ID|
+|DESTROY |/stocks/:id|DELETE    |Deletes the transaction with the given ID|
+
+
 
 ## Technologies Used
 
