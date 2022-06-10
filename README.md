@@ -1,7 +1,8 @@
 # TheHood - Stocks Investment Tracker
 
 
-# Premise
+# Premise:
+TheHood is basically a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. 
 
 
 ## User Story
