@@ -25,6 +25,8 @@
 
 
 
+### Dashboard Page:
+![Dashboard page](https://user-images.githubusercontent.com/42398487/173122573-a2e25733-4122-4e39-a61c-14cfed862e6b.png)
 
 
 ## Entity Relationship Diagram (ERD):
