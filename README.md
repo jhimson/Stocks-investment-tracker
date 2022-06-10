@@ -1,4 +1,4 @@
-# TheHood
+# TheHood - Stocks Investment Tracker
 
 
 ## Premise:
