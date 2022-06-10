@@ -38,8 +38,9 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 <br/>
 
 ## Entity Relationship Diagram (ERD):
+![ERD](https://user-images.githubusercontent.com/42398487/173134023-0acaaa9d-f52b-4a92-9ae1-9bbdaa87ae9d.png)
 
-![ERD](https://user-images.githubusercontent.com/42398487/173120149-16b60d49-4697-4aa9-a17b-93f2babc60df.png)
+
 
 
 <br/>
