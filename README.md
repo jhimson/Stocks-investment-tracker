@@ -2,7 +2,7 @@
 
 
 ## Premise:
-TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is basically a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlists of their favorite stocks.
+TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlists of their favorite stocks.
 
 
 ## User Story
