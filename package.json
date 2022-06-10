@@ -1,0 +1,21 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlists of their favorite stocks.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhimson/Stocks-investment-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhimson/Stocks-investment-tracker/issues"
+  },
+  "homepage": "https://github.com/jhimson/Stocks-investment-tracker#readme"
+}
