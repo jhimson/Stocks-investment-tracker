@@ -57,4 +57,11 @@
 [ ] - Integrate a news api, so the users can also have information about latest news of the stocks on their watchlists.
 [ ] - Implement OAuth authentication to be able to login using their google account.
 [ ] - Update the front-end codebase to React.js, to make it a Full-Stack MERN application.
-
+- [x] Design
+- [x] Mockups
+- [x] Development
+- [x] Unit testing
+- [ ] QA
+- [ ] Stage
+- [ ] Beta Testing
+- [ ] Production
