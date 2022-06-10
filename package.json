@@ -17,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/jhimson/Stocks-investment-tracker/issues"
   },
-  "homepage": "https://github.com/jhimson/Stocks-investment-tracker#readme"
+  "homepage": "https://github.com/jhimson/Stocks-investment-tracker#readme",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
+  }
 }
