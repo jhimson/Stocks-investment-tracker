@@ -37,7 +37,7 @@
 
 - HTML
 - CSS
-- JavaScript
+!(js-icon)[https://raw.githubusercontent.com/vorillaz/devicons/master/!PNG/javascript_1.png]
 - Node.js
 - Express
 - EJS
