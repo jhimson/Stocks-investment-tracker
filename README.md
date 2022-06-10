@@ -19,7 +19,10 @@ Cancel changes
 
 ### Wireframes:
 
-![Login page](https://user-images.githubusercontent.com/42398487/173120423-29a869a7-0cc2-440d-b259-7c182687ee01.png)
+#### Login Page:
+![Login page](https://user-images.githubusercontent.com/42398487/173120701-8999b8cd-8b5a-49af-96df-4c3833b6d921.png)
+
+
 
 ### Entity Relationship Diagram (ERD):
 
@@ -45,7 +48,6 @@ Cancel changes
 
 # MVP Requirements:
 
-![Page 1](https://user-images.githubusercontent.com/42398487/169837028-52f56554-d42c-47df-81a0-348c40e4c7ba.png)
 
 
 # MVP Requirements:
