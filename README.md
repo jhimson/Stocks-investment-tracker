@@ -40,6 +40,8 @@
 |Name  |Path   |HTTP Verb |Purpose|
 |:----:|:-----:|:--------:|:-----:|
 |INDEX |/stocks|GET       |Show all transactions|
+|:----:|:-----:|:--------:|:-----:|
+|NEW |/stocks/new|POST       |Create new transactions|
 
 ## Technologies Used
 
