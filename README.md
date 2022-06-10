@@ -36,7 +36,7 @@
 
 
 
-## Route Table:
+## Routes Table:
 |Name  |Path   |HTTP Verb |Purpose|
 |:----|:-----|:--------|:-----|
 |INDEX |/stocks|GET       |Show all transactions|
