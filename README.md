@@ -64,6 +64,11 @@
 
 ## MVP Requirements:
 
+- [ ] Signup and Login Functionality.
+- [ ] CRUD functionality for Stocks transactions.
+- [ ] CRUD functionality for Stocks watchlists.
+- [ ] Search functionality for a stock details using Stocks API.
+- [ ] Update the front-end codebase to React.js, to make it a Full-Stack MERN application.
 
 
 ## Stretch goals / ICE BOX:
