@@ -74,7 +74,7 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - HTML
 - CSS
 - Javascript
-- EJS
+- EJS (Template Engine)
 - Tailwindcss
 - Node.js
 - Express
