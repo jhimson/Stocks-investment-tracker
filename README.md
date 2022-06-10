@@ -4,7 +4,7 @@
 ### Premise
 
 
-### User Story
+## User Story
 
 ##### As a user I want to:
 
@@ -18,7 +18,7 @@
 - Be able to look up a specific stock that user is interested to learn more about the company. (Using stocks API)
 
 
-### Wireframes:
+## Wireframes:
 
 #### Login Page:
 ![Login page](https://user-images.githubusercontent.com/42398487/173120701-8999b8cd-8b5a-49af-96df-4c3833b6d921.png)
@@ -27,17 +27,17 @@
 
 
 
-### Entity Relationship Diagram (ERD):
+## Entity Relationship Diagram (ERD):
 
 ![ERD](https://user-images.githubusercontent.com/42398487/173120149-16b60d49-4697-4aa9-a17b-93f2babc60df.png)
 
 
 
-### Route Table:
+## Route Table:
 
 
 
-### Technologies Used
+## Technologies Used
 
 - HTML
 - CSS
@@ -47,15 +47,15 @@
 - EJS
 - Tailwindcss
 
-### How to use:
+## How to use:
 
 
 
-# MVP Requirements:
+## MVP Requirements:
 
 
 
-# Stretch goals / ICE BOX:
+## Stretch goals / ICE BOX:
 
 - [ ] Add a userProfile Schema and page so other users can view the watchlists of other users.
 - [ ] Integrate a news api, so the users can also have information about latest news of the stocks on their watchlists.
