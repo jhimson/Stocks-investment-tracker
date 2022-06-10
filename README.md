@@ -41,6 +41,9 @@
 ![ERD](https://user-images.githubusercontent.com/42398487/173120149-16b60d49-4697-4aa9-a17b-93f2babc60df.png)
 
 
+<br/>
+<br/>
+<br/>
 
 ## Routes Table:
 |Name  |Path   |HTTP Verb |Purpose|
@@ -53,6 +56,9 @@
 |DESTROY |/stocks/:id|DELETE    |Deletes the transaction with the given ID|
 
 
+<br/>
+<br/>
+<br/>
 
 ## Technologies Used
 
