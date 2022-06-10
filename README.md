@@ -65,10 +65,12 @@
 - HTML
 - CSS
 - Javascript
-- Node.js
-- Express
 - EJS
 - Tailwindcss
+- Node.js
+- Express
+- MongoDB/Mongoose Database (Atlas)
+- Stocks API
 
 ## How to use:
 
