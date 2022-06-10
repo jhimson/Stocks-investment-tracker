@@ -50,11 +50,17 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 |Name  |Path   |HTTP Verb |Purpose|
 |:----|:-----|:--------|:-----|
 |INDEX |/stocks|GET       |Show all transactions|
+|INDEX |/watchlists|GET       |Show all users' watchlist|
 |SHOW |/stocks/:id|GET       |Show the stock transaction details|
+|SHOW |/watchlists/:id|GET       |Show the watchlist details and all the stocks in the watchlist|
 |EDIT |/stocks/edit/:id|GET    |Shows the form for the user to edit the transaction|
+|EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
 |NEW |/stocks/new|POST    |Create new transactions|
+|NEW |/watchlists/new|POST    |Create new watchlist|
 |UPDATE |/stocks/:id|PUT    |Updates the transaction with the given ID|
+|UPDATE |/watchlists/:id|PUT    |Updates the watchlist with the given ID|
 |DESTROY |/stocks/:id|DELETE    |Deletes the transaction with the given ID|
+|DESTROY |/watchlists/:id|DELETE    |Deletes the watchlist with the given ID|
 
 
 <br/>
