@@ -19,16 +19,28 @@ const newTransaction = async (req, res) => {
 //! CREATE ROUTE
 const createNewTransaction = async (req, res) => {
   try {
-    const newTransaction = await Transaction.create(req.body);
+    await Transaction.create(req.body);
     console.log('Successfully created transaction');
-    res.redirect('/transactions/')
+
+    res.redirect('/transactions');
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
+//! DELETE ROUTE
+const deleteTransaction = async(req, res) => {
+  try {
+    await Transaction.findByIdAndDelete(req.params.id)
+    res.redirect('/transactions')
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 module.exports = {
   getAllTransactions,
   newTransaction,
   createNewTransaction,
+  deleteTransaction
 };

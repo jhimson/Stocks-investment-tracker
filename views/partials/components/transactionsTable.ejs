@@ -35,10 +35,16 @@
               >
                 Quantity
               </th>
+              <th
+                scope="col"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+              >
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
-            <% transactions.forEach(({name, tickerSymbol, type, stockPrice,
+            <% transactions.forEach(({_id, name, tickerSymbol, type, stockPrice,
             quantity}) => { %>
             <tr class="border-b">
               <td
@@ -65,6 +71,20 @@
                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
               >
                 <%= quantity%>
+              </td>
+              <td
+                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+              >
+                <form
+                  action="/transactions/<%= _id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <input
+                    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded cursor-pointer"
+                    type="submit"
+                    value="Delete"
+                  />
+                </form>
               </td>
             </tr>
             <% }) %>
