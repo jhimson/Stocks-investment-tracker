@@ -3,6 +3,10 @@ const { Schema, model } = mongoose;
 
 const transactionSchema = new Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    },
     type: {
       type: String,
       required: true,
