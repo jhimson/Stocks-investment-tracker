@@ -17,10 +17,10 @@ app.use(express.static('public')); //? serve files from public statically
 
 // ! Routes
 app.get('/', (req, res) => {
-  res.send('Testing... home route!');
+  res.redirect('/transactions')
 });
 
-app.use('/api/v1/transactions', transactionsRoute);
+app.use('/transactions', transactionsRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));

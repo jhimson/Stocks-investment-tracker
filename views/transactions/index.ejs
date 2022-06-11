@@ -1,14 +1,13 @@
 <%- include('../partials/header'); -%> <% let x = 'Jhimson' %>
 <h1 class="text-6xl"><%= x %></h1>
+<a href="/transactions/new">
+  <button
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4"
+  >
+    Add Transaction
+  </button>
+</a>
 <ul>
-  <% transactions.forEach(transaction => { %>
-  <li>Name: <%= transaction.name%></li>
-  <li>Symbol: <%= transaction.tickerSymbol%></li>
-  <li>Type: <%= transaction.type%></li>
-  <li>Price: $<%= transaction.stockPrice%></li>
-  <li>Quantity: <%= transaction.quantity%></li>
-  <li>Date: <%= transaction.date%></li>
-  <hr />
-  <% }) %>
+  <%- include('../partials/components/transactionsTable', {transactions}) -%>
 </ul>
 <%- include('../partials/footer'); -%>
