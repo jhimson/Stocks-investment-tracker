@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const { showTransactions } = require('../controllers/transactionsController');
 
-router.get('/', (req, res) => {
-res.render('transactions/index')
-});
+router.get('/', showTransactions);
 
 module.exports = router;

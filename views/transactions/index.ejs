@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <% let x = 'Jhimson' %>
-    <h1><%= x %></h1>
-  </body>
-</html>
+<%- include('../partials/header'); -%> <% let x = 'Jhimson' %>
+<h1 class="text-6xl"><%= x %></h1>
+<ul>
+  <% transactions.forEach(transaction => { %>
+  <li>Symbol: <%= transaction.tickerSymbol%></li>
+  <li>Type: <%= transaction.type%></li>
+  <li>Price: $<%= transaction.stockPrice%></li>
+  <li>Quantity: <%= transaction.quantity%></li>
+  <li>Date: <%= transaction.date%></li>
+  <hr />
+  <% }) %>
+</ul>
+<%- include('../partials/footer'); -%>
