@@ -2,6 +2,7 @@
 <h1 class="text-6xl"><%= x %></h1>
 <ul>
   <% transactions.forEach(transaction => { %>
+  <li>Name: <%= transaction.name%></li>
   <li>Symbol: <%= transaction.tickerSymbol%></li>
   <li>Type: <%= transaction.type%></li>
   <li>Price: $<%= transaction.stockPrice%></li>

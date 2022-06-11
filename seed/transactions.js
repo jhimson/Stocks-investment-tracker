@@ -8,18 +8,21 @@ const db = mongoose.connection;
 db.on('open', async () => {
   const transactions = [
     {
+      name: 'Marathon Digitals',
       type: 'Buy',
       tickerSymbol: 'MARA',
       quantity: 200,
       stockPrice: 7.88,
     },
     {
+      name: 'Apple Corporation',
       type: 'Buy',
       tickerSymbol: 'AAPL',
       quantity: 10,
       stockPrice: 144,
     },
     {
+      name: 'Netflix',
       type: 'Sell',
       tickerSymbol: 'NFLX',
       quantity: 150,
