@@ -1,4 +1,4 @@
-# TheHood
+# TheHood - Stocks Investment Tracker
 
 
 ## Premise:
@@ -51,17 +51,17 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 ## Routes Table:
 |Name  |Path   |HTTP Verb |Purpose|
 |:----|:-----|:--------|:-----|
-|INDEX |/stocks|GET       |Show all transactions|
+|INDEX |/transactions|GET       |Show all transactions|
 |INDEX |/watchlists|GET       |Show all users' watchlist|
-|SHOW |/stocks/:id|GET       |Show the stock transaction details|
+|SHOW |/transactions/:id|GET       |Show the stock transaction details|
 |SHOW |/watchlists/:id|GET       |Show the watchlist details and all the stocks in the watchlist|
-|EDIT |/stocks/edit/:id|GET    |Shows the form for the user to edit the transaction|
+|EDIT |/transactions/edit/:id|GET    |Shows the form for the user to edit the transaction|
 |EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
-|NEW |/stocks/new|POST    |Create new transactions|
+|NEW |/transactions/new|POST    |Create new transactions|
 |NEW |/watchlists/new|POST    |Create new watchlist|
-|UPDATE |/stocks/:id|PUT    |Updates the transaction with the given ID|
+|UPDATE |/transactions/:id|PUT    |Updates the transaction with the given ID|
 |UPDATE |/watchlists/:id|PUT    |Updates the watchlist with the given ID|
-|DESTROY |/stocks/:id|DELETE    |Deletes the transaction with the given ID|
+|DESTROY |/transactions/:id|DELETE    |Deletes the transaction with the given ID|
 |DESTROY |/watchlists/:id|DELETE    |Deletes the watchlist with the given ID|
 
 
@@ -87,11 +87,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 ## MVP Requirements:
 
-- [ ] Signup and Login Functionality.
 - [ ] CRUD functionality for Stocks transactions.
-- [ ] CRUD functionality for Stocks watchlists.
-- [ ] Search functionality for a stock details using Stocks API.
-- [ ] Update the front-end codebase to React.js, to make it a Full-Stack MERN application.
+
 
 
 ## Stretch goals / ICE BOX:
