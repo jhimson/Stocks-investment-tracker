@@ -7,7 +7,7 @@ const getAllTransactions = async (req, res) => {
     const transactions = await Transaction.find({
       user: req.session._id,
     });
-    res.render('transactions/index', { transactions });
+    res.render('transactions/index', { transactions, username: req.session.username});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
