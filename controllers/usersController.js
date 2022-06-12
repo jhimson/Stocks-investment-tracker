@@ -37,10 +37,11 @@ const loginUser = async (req, res) => {
         const result = await bcrypt.compare(password, user.password);
         if (result) {
           //! store some properties in the session object
+          req.session._id = user._id;
           req.session.username = username;
           req.session.loggedIn = true;
           console.log(req.session);
-          //? Redirect to fruits page if successful
+          //? Redirect to transactions page if successful
           res.redirect('/transactions');
         } else {
           res.json({ error: `Password doesn't match` });
@@ -66,5 +67,5 @@ const logoutUser = (req, res) => {
 module.exports = {
   createUser,
   loginUser,
-  logoutUser
+  logoutUser,
 };
