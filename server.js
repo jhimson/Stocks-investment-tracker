@@ -4,6 +4,8 @@ const express = require('express'); // import express
 const morgan = require('morgan'); //import morgan
 const methodOverride = require('method-override');
 const app = express();
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 // ! Routers
 const transactionsRoute = require('./routes/transactionsRoutes');
@@ -16,16 +18,28 @@ app.use(methodOverride('_method')); //? override for put and delete requests fro
 app.use(express.urlencoded({ extended: true })); //? parse urlencoded request bodies
 app.use(express.static('public')); //? serve files from public statically
 
-// ! Routes
+//! middleware to setup session
+app.use(
+  session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+    saveUninitialized: true,
+    resave: false,
+  })
+);
 
 // ! Index
 app.get('/', (req, res) => {
-  res.send('Welcome to TheHood');
+  res.redirect('/login')
 });
+
 app.get('/signup', (req, res) => {
   res.render('users/signupPage');
 });
 
+app.get('/login', (req, res) => {
+  res.render('users/loginPage');
+});
 
 app.use('/transactions', transactionsRoute);
 app.use('/users', usersRoute);

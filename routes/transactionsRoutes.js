@@ -9,6 +9,15 @@ const {
   updateTransaction,
 } = require('../controllers/transactionsController');
 
+//! Authorization Middleware
+router.use((req, res, next) => {
+  if (req.session.loggedIn) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+});
+
 router.get('/', getAllTransactions);
 router.get('/new', newTransaction);
 router.get('/edit/:id', editTransaction);

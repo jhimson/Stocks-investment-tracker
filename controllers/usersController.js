@@ -28,6 +28,43 @@ const createUser = async (req, res) => {
   }
 };
 
+const loginUser = async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ username });
+    if (user) {
+      try {
+        const result = await bcrypt.compare(password, user.password);
+        if (result) {
+          //! store some properties in the session object
+          req.session.username = username;
+          req.session.loggedIn = true;
+          console.log(req.session);
+          //? Redirect to fruits page if successful
+          res.redirect('/transactions');
+        } else {
+          res.json({ error: `Password doesn't match` });
+        }
+      } catch (error) {
+        res.json({ message: error.message });
+      }
+    } else {
+      res.json({ error: "User doesn't exist!" });
+    }
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
+
+const logoutUser = (req, res) => {
+  //? Destroy session and redirect to main page
+  req.session.destroy((err) => {
+    res.redirect('/');
+  });
+};
+
 module.exports = {
   createUser,
+  loginUser,
+  logoutUser
 };
