@@ -7,6 +7,7 @@ const app = express();
 
 // ! Routers
 const transactionsRoute = require('./routes/transactionsRoutes');
+const usersRoute = require('./routes/usersRoutes');
 
 // ! Middlewares
 app.set('view engine', 'ejs');
@@ -16,11 +17,18 @@ app.use(express.urlencoded({ extended: true })); //? parse urlencoded request bo
 app.use(express.static('public')); //? serve files from public statically
 
 // ! Routes
+
+// ! Index
 app.get('/', (req, res) => {
-  res.redirect('/transactions')
+  res.send('Welcome to TheHood');
+});
+app.get('/signup', (req, res) => {
+  res.render('users/signupPage');
 });
 
+
 app.use('/transactions', transactionsRoute);
+app.use('/users', usersRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));
