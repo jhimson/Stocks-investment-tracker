@@ -4,7 +4,9 @@ const Transaction = require('../models/transactionsModel');
 //? Retrieve all transactions from the database
 const getAllTransactions = async (req, res) => {
   try {
-    const transactions = await Transaction.find({});
+    const transactions = await Transaction.find({
+      user: req.session._id,
+    });
     res.render('transactions/index', { transactions });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -19,6 +21,7 @@ const newTransaction = async (req, res) => {
 //! CREATE ROUTE
 const createNewTransaction = async (req, res) => {
   try {
+    req.body.user = req.session._id;
     await Transaction.create(req.body);
     console.log('Successfully created transaction');
 
@@ -78,5 +81,5 @@ module.exports = {
   createNewTransaction,
   deleteTransaction,
   editTransaction,
-  updateTransaction
+  updateTransaction,
 };
