@@ -39,13 +39,20 @@
                 scope="col"
                 class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
               >
+                Date
+              </th>
+              <th
+                scope="col"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                colspan="2"
+              >
                 Action
               </th>
             </tr>
           </thead>
           <tbody>
             <% transactions.forEach(({_id, name, tickerSymbol, type, stockPrice,
-            quantity}) => { %>
+            quantity,date}) => { %>
             <tr class="border-b">
               <td
                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
@@ -75,8 +82,20 @@
               <td
                 class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
               >
+                <%= date.toLocaleDateString()%>
+              </td>
+              <td
+                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex bg-gray-200 gap-x-4"
+              >
+                <a href="transactions/edit/<%= _id %>"
+                  ><button
+                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded cursor-pointer"
+                  >
+                    Update
+                  </button></a
+                >
                 <form
-                  action="/transactions/<%= _id %>?_method=DELETE"
+                  action="transactions/<%= _id %>?_method=DELETE"
                   method="POST"
                 >
                   <input

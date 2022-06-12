@@ -29,18 +29,54 @@ const createNewTransaction = async (req, res) => {
 };
 
 //! DELETE ROUTE
-const deleteTransaction = async(req, res) => {
+const deleteTransaction = async (req, res) => {
   try {
-    await Transaction.findByIdAndDelete(req.params.id)
-    res.redirect('/transactions')
+    await Transaction.findByIdAndDelete(req.params.id);
+    res.redirect('/transactions');
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-}
+};
+
+// ! EDIT ROUTE
+const editTransaction = async (req, res) => {
+  try {
+    const transaction = await Transaction.findById(req.params.id);
+    res.render('transactions/editTransactionPage', { transaction });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// ! UPDATE ROUTE
+const updateTransaction = async (req, res) => {
+  const { name, tickerSymbol, type, stockPrice, quantity, date } = req.body;
+  try {
+    await Transaction.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          name,
+          tickerSymbol,
+          type,
+          stockPrice,
+          quantity,
+          date,
+        },
+      }
+    );
+    console.log('Successfully updated transaction');
+    res.redirect('/transactions');
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 module.exports = {
   getAllTransactions,
   newTransaction,
   createNewTransaction,
-  deleteTransaction
+  deleteTransaction,
+  editTransaction,
+  updateTransaction
 };

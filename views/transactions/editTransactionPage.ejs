@@ -1,0 +1,6 @@
+<%- include('../partials/header') -%>
+
+<h1>Testing edit page <%= transaction.name %></h1>
+<%- include('../partials/components/transactionForm', {action:
+`/transactions/${transaction._id}?_method=PUT`, method:'POST', type:'edit',
+transaction}) -%> <%- include('../partials/footer') -%>
