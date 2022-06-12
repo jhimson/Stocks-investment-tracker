@@ -1,3 +1,6 @@
-<%- include('../partials/header', {title: 'User Login'}); -%> <%-
-include('../partials/components/loginForm') -%> <%-
-include('../partials/footer'); -%>
+<%- include('../partials/header', {title: 'User Login'}); -%>
+<header><%- include('../partials/components/navbar'); -%></header>
+<div class="flex justify-center items-center">
+  <%- include('../partials/components/loginForm') -%>
+</div>
+<%-include('../partials/footer'); -%>
