@@ -2,14 +2,26 @@
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'Watchlists'}); -%>
   <section class="w-full container p-4">
-    <h1 class="text-4xl mb-8">Jhimson12's Watchlists</h1>
-    <div class="gap-x-8 flex items-center">
-      <%# include('../partials/components/watchlistCard', {name:'Dividends'})
-      -%> <%# include('../partials/components/watchlistCard', {name:`Daily
-      Watch`}) -%> <%# include('../partials/components/watchlistCard',
-      {name:`Priority`}) -%> <% watchlists.forEach(watchlist => { %> <%-
-      include('../partials/components/watchlistCard', {name:watchlist.name}) -%>
-      <% }) %>
+    <div
+      class="container bg-gray-50 p-4 drop-shadow-xl border-2 border-gray-200 rounded-lg h-full"
+    >
+      <div class="flex justify-between">
+        <div>
+          <h1 class="text-4xl mb-8"><%= username %>'s Watchlists</h1>
+        </div>
+        <div>
+          <button
+            class="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded cursor-pointer"
+          >
+            Create New Watchlist
+          </button>
+        </div>
+      </div>
+      <div class="gap-x-8 flex items-center">
+        <% watchlists.forEach(watchlist => { %> <%-
+        include('../partials/components/watchlistCard', {name:watchlist.name})
+        -%> <% }) %>
+      </div>
     </div>
   </section>
 </div>
