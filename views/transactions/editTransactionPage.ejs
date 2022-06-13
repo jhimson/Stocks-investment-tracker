@@ -1,6 +1,11 @@
-<%- include('../partials/header', {title: 'Update Transaction'}) -%>
-
-<h1>Testing edit page <%= transaction.name %></h1>
-<%- include('../partials/components/transactionForm', {action:
-`/transactions/${transaction._id}?_method=PUT`, method:'POST', type:'edit',
-transaction}) -%> <%- include('../partials/footer') -%>
+<%- include('../partials/header', {title: 'Update Transaction'}); -%>
+<div class="flex w-screen h-screen">
+  <%- include('../partials/components/sidenav'); -%>
+  <section class="w-full container p-4">
+    <div class="flex items-center justify-between"></div>
+    <%- include('../partials/components/transactionForm', {action:
+    `/transactions/${transaction._id}?_method=PUT`, method:'POST', type:'edit',
+    transaction}) -%>
+  </section>
+</div>
+<%- include('../partials/footer'); -%>
