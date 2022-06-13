@@ -1,0 +1,11 @@
+<%- include('../partials/header', {title: 'Update Watchlist'}); -%>
+<div class="flex w-screen h-screen">
+  <%- include('../partials/components/sidenav', {active: 'None'}); -%>
+  <section class="w-full container p-4">
+    <div class="flex items-center justify-between"></div>
+    <%- include('../partials/components/watchlistForm',
+    {action:`/watchlists/edit/${watchlist.id}?_method=PUT`, method: 'POST',
+    type:'update', title:'Update Watchlist', watchlist}) -%>
+  </section>
+</div>
+<%- include('../partials/footer'); -%>

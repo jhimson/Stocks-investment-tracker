@@ -3,12 +3,8 @@
     <div class="font-bold text-xl mb-2 flex justify-between">
       <div><%= name %></div>
       <div>
-        <form
-          action="/watchlists/edit/<%= id %>?_method=PUT"
-          method="POST"
-          class="inline-block"
-        >
-          <!-- <button type="submit" class="btn btn-default text-blue-500">
+        <a href="/watchlists/edit/<%= id %>">
+          <button class="btn btn-default text-blue-500">
             <svg
               class="w-6 h-6"
               fill="none"
@@ -22,10 +18,10 @@
                 stroke-width="2"
                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
               ></path>
-            </svg>
-          </button> -->
-          <%- include('./updateWatchlistModal', {id}); -%>
-        </form>
+            </svg></button
+        ></a>
+
+        <%# include('./updateWatchlistModal', {id}); -%>
         <form
           action="/watchlists/<%= id %>?_method=DELETE"
           method="POST"

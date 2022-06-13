@@ -29,6 +29,16 @@ const createWatchList = async (req, res) => {
   }
 };
 
+// ! EDIT ROUTE
+const editWatchlist = async (req, res) => {
+  try {
+    const watchlist = await Watchlist.findById(req.params.id);
+    res.render('watchlists/editWatchlistPage', { watchlist });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 //! UPDATE ROUTE
 const updateWatchList = async (req, res) => {
   try {
@@ -55,4 +65,5 @@ module.exports = {
   newWatchlist,
   createWatchList,
   updateWatchList,
+  editWatchlist
 };
