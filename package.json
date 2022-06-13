@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "transactions": "node seed/transactions.js",
-    "users": "node seed/users.js"
+    "users": "node seed/users.js",
+    "watchlists": "node seed/watchlists.js"
   },
   "repository": {
     "type": "git",
