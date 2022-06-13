@@ -10,6 +10,7 @@ const MongoStore = require('connect-mongo');
 // ! Routers
 const transactionsRoute = require('./routes/transactionsRoutes');
 const usersRoute = require('./routes/usersRoutes');
+const watchlistsRoute = require('./routes/watchlistsRoutes');
 
 // ! Middlewares
 app.set('view engine', 'ejs');
@@ -30,7 +31,7 @@ app.use(
 
 // ! Index
 app.get('/', (req, res) => {
-  res.redirect('/login')
+  res.redirect('/login');
 });
 
 app.get('/signup', (req, res) => {
@@ -43,6 +44,7 @@ app.get('/login', (req, res) => {
 
 app.use('/transactions', transactionsRoute);
 app.use('/users', usersRoute);
+app.use('/watchlists', watchlistsRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));
