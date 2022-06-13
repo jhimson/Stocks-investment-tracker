@@ -18,6 +18,17 @@ const newWatchlist = async (req, res) => {
   res.render('watchlists/newWatchlistPage');
 };
 
+//! CREATE ROUTE
+const createWatchList = async (req, res) => {
+  req.body.user = req.session._id;
+  try {
+    await Watchlist.create(req.body);
+    res.redirect('/watchlists');
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 //! DELETE ROUTE
 const deleteWatchlist = async (req, res) => {
   try {
@@ -32,4 +43,5 @@ module.exports = {
   getAllWatchlists,
   deleteWatchlist,
   newWatchlist,
+  createWatchList,
 };
