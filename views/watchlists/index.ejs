@@ -3,7 +3,14 @@
   <%- include('../partials/components/sidenav', {active: 'Watchlists'}); -%>
   <section class="w-full container p-4">
     <h1 class="text-4xl mb-8">Jhimson12's Watchlists</h1>
-    <div class="flex items-center justify-between"></div>
+    <div class="gap-x-8 flex items-center">
+      <%# include('../partials/components/watchlistCard', {name:'Dividends'})
+      -%> <%# include('../partials/components/watchlistCard', {name:`Daily
+      Watch`}) -%> <%# include('../partials/components/watchlistCard',
+      {name:`Priority`}) -%> <% watchlists.forEach(watchlist => { %> <%-
+      include('../partials/components/watchlistCard', {name:watchlist.name}) -%>
+      <% }) %>
+    </div>
   </section>
 </div>
 <%- include('../partials/footer'); -%>
