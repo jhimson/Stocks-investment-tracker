@@ -1,33 +1,19 @@
 require('dotenv').config(); // Load ENV Variables
 require('./config/database');
 const express = require('express'); // import express
-const morgan = require('morgan'); //import morgan
-const methodOverride = require('method-override');
 const app = express();
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
+
+const middleware = require('./utils/middleware')
 
 // ! Routers
 const transactionsRoute = require('./routes/transactionsRoutes');
 const usersRoute = require('./routes/usersRoutes');
 const watchlistsRoute = require('./routes/watchlistsRoutes');
 
-// ! Middlewares
 app.set('view engine', 'ejs');
-app.use(morgan('dev')); //? logging
-app.use(methodOverride('_method')); //? override for put and delete requests from forms
-app.use(express.urlencoded({ extended: true })); //? parse urlencoded request bodies
-app.use(express.static('public')); //? serve files from public statically
 
-//! middleware to setup session
-app.use(
-  session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-    saveUninitialized: true,
-    resave: false,
-  })
-);
+//! middlewares
+middleware(app)
 
 // ! Index
 app.get('/', (req, res) => {
