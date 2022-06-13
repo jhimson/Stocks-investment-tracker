@@ -29,6 +29,16 @@ const createWatchList = async (req, res) => {
   }
 };
 
+//! UPDATE ROUTE
+const updateWatchList = async (req, res) => {
+  try {
+    await Watchlist.updateOne({ _id: req.params.id }, { $set: req.body });
+    res.redirect('/watchlists');
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 //! DELETE ROUTE
 const deleteWatchlist = async (req, res) => {
   try {
@@ -44,4 +54,5 @@ module.exports = {
   deleteWatchlist,
   newWatchlist,
   createWatchList,
+  updateWatchList,
 };
