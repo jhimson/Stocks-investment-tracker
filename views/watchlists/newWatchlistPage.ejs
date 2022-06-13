@@ -1,0 +1,10 @@
+<%- include('../partials/header', {title: 'Create Watchlist'}); -%>
+<div class="flex w-screen h-screen">
+  <%- include('../partials/components/sidenav', {active: 'None'}); -%>
+  <section class="w-full container p-4">
+    <div class="flex items-center justify-between"></div>
+    <%- include('../partials/components/watchlistForm', {action:'/watchlists',
+    method: 'POST', type:'create'}) -%>
+  </section>
+</div>
+<%- include('../partials/footer'); -%>
