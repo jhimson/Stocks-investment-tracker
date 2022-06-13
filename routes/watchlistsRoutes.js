@@ -7,8 +7,17 @@ const {
   newWatchlist,
   createWatchList,
   updateWatchList,
-  editWatchlist
+  editWatchlist,
 } = require('../controllers/watchlistsController');
+
+//! Authorization Middleware
+router.use((req, res, next) => {
+  if (req.session.loggedIn) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+});
 
 router.get('/', getAllWatchlists);
 router.get('/new', newWatchlist);
