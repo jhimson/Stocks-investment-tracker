@@ -42,7 +42,7 @@ const loginUser = async (req, res) => {
           req.session.loggedIn = true;
           console.log(req.session);
           //? Redirect to transactions page if successful
-          res.redirect('/transactions');
+          res.redirect('/dashboard');
         } else {
           res.json({ error: `Password doesn't match` });
         }

@@ -1,0 +1,11 @@
+<%- include('../partials/header', {title: 'Dashboard page'}); -%>
+<div class="flex w-screen h-screen">
+  <%- include('../partials/components/sidenav', {active: 'dashboard'}); -%>
+  <section class="w-full container p-4">
+    <h1 class="text-4xl mb-8">Welcome, <%= username %></h1>
+    <div class="flex items-center justify-between">
+      <div></div>
+    </div>
+  </section>
+</div>
+<%- include('../partials/footer'); -%>
