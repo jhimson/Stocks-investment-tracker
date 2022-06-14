@@ -10,11 +10,10 @@ const searchStock = async (req, res) => {
       `https://api.twelvedata.com/price?symbol=${req.body.symbol}&apikey=${process.env.APIKEY1}&source=docs`
     );
 
-    const {price} = await responsePrice.json();
+    const { price } = await responsePrice.json();
 
     // ! If stock already exists in the database, use the data to feed the display for stock search and don't need to re-fetch from API
     const stock = await Stock.find({ symbol: req.body.symbol });
-    console.log(stock);
     if (stock.length) {
       result = stock[0];
     } else {
@@ -51,8 +50,10 @@ const searchStock = async (req, res) => {
   }
 
   try {
-    const watchLists = await Watchlist.find({ user: req.session._id });
-    res.render('results/index', { result, watchLists });
+    if (result) {
+      const watchLists = await Watchlist.find({ user: req.session._id });
+      res.render('results/index', { result, watchLists });
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
