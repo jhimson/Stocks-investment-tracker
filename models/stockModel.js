@@ -17,6 +17,7 @@ const stockSchema = new Schema(
     description: {
       type: String,
     },
+    price: Number,
     sector: {
       type: String,
     },
