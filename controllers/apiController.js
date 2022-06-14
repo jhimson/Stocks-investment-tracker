@@ -12,10 +12,19 @@ const searchStock = async (req, res) => {
     } else {
       // ! If stock doesn't exists in the database, fetch the stock from the api then save it to the database
       const response = await fetch(
-        `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${req.body.symbol}&apikey=${process.env.APIKEY}`
+        `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${req.body.symbol}&apikey=${process.env.APIKEY2}`
       );
       const data = await response.json();
+
+
+      //! Fetch logo from a different API
+      const responseLogo = await fetch(
+        `https://api.twelvedata.com/logo?symbol=AAPL&apikey=${process.env.APIKEY1}&source=docs`
+      );
+      const { url } = await responseLogo.json();
+
       result = {
+        logo: url,
         symbol: data.Symbol,
         name: data.Name,
         description: data.Description,
