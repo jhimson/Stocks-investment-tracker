@@ -65,37 +65,55 @@
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
               <div class="flex gap-x-4">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
+                  class="w-6 h-6"
                   fill="none"
-                  viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  />
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
                 </svg>
                 <h3
                   class="text-lg leading-6 font-medium text-gray-900"
                   id="modal-title"
                 >
-                  Update Watchlist
+                  Select Watchlist
                 </h3>
               </div>
-              <div class="mt-2">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    value=""
-                    placeholder="Enter Watchlist name"
-                    required=""
-                  />
-                </div>
+              <div class="bg-white rounded-lg shadow-lg mt-4">
+                <ul class="divide-y-8 text-gray-500">
+                  <li
+                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
+                  >
+                    MARA - $82.23
+                  </li>
+                  <li
+                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
+                  >
+                    AAPL - $120.22
+                  </li>
+                  <li
+                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
+                  >
+                    MSFT - $244.22
+                  </li>
+                  <li
+                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
+                  >
+                    NFLX - $46.22
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
