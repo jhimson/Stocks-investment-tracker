@@ -10,25 +10,14 @@ const transactionsRoute = require('./routes/transactionsRoutes');
 const usersRoute = require('./routes/usersRoutes');
 const watchlistsRoute = require('./routes/watchlistsRoutes');
 const apiRoute = require('./routes/apiRoutes');
+const mainRoute = require('./routes/mainRoutes');
 
 app.set('view engine', 'ejs');
 
 //! middlewares
 middleware(app);
 
-// ! Index
-app.get('/', (req, res) => {
-  res.redirect('/login');
-});
-
-app.get('/signup', (req, res) => {
-  res.render('users/signupPage');
-});
-
-app.get('/login', (req, res) => {
-  res.render('users/loginPage');
-});
-
+app.use('/', mainRoute)
 app.use('/transactions', transactionsRoute);
 app.use('/users', usersRoute);
 app.use('/watchlists', watchlistsRoute);
