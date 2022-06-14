@@ -3,47 +3,47 @@
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
         <table class="min-w-full">
-          <thead class="border-b">
+          <thead class="border-b bg-gray-300">
             <tr>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Name
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Symbol
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Type
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Price
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Quantity
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Date
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
+                class="text-lg font-medium text-gray-900 px-6 py-4 text-left font-bold"
                 colspan="2"
               >
                 Action
@@ -52,40 +52,41 @@
           </thead>
           <tbody>
             <% transactions.forEach(({_id, name, tickerSymbol, type, stockPrice,
-            quantity,date}) => { %>
+            quantity,date, logo}) => { %>
             <tr
               class="border-b <%= type === 'Buy' ? 'bg-green-100' : 'bg-red-300' %>"
             >
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= name%>
               </td>
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= tickerSymbol%>
               </td>
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= type%>
               </td>
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 $<%= stockPrice%>
               </td>
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= quantity%>
               </td>
               <td
-                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
+                class="text-sm text-black font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= date.toLocaleDateString()%>
               </td>
+
               <td
                 class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap flex gap-x-4"
               >
