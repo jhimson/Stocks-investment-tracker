@@ -4,6 +4,14 @@ const Stock = require('../models/stockModel');
 const searchStock = async (req, res) => {
   let result;
   try {
+    // ! Fetch stock price
+
+    const responsePrice = await fetch(
+      `https://api.twelvedata.com/price?symbol=${req.body.symbol}&apikey=${process.env.APIKEY1}&source=docs`
+    );
+
+    const {price} = await responsePrice.json();
+
     // ! If stock already exists in the database, use the data to feed the display for stock search and don't need to re-fetch from API
     const stock = await Stock.find({ symbol: req.body.symbol });
     console.log(stock);
@@ -16,17 +24,16 @@ const searchStock = async (req, res) => {
       );
       const data = await response.json();
 
-
       //! Fetch logo from a different API
       const responseLogo = await fetch(
         `https://api.twelvedata.com/logo?symbol=AAPL&apikey=${process.env.APIKEY1}&source=docs`
       );
       const { url } = await responseLogo.json();
-
       result = {
         logo: url,
         symbol: data.Symbol,
         name: data.Name,
+        price: parseFloat(price),
         description: data.Description,
         sector: data.Sector,
         industry: data.Industry,
