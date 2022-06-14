@@ -26,7 +26,7 @@ const searchStock = async (req, res) => {
 
       //! Fetch logo from a different API
       const responseLogo = await fetch(
-        `https://api.twelvedata.com/logo?symbol=AAPL&apikey=${process.env.APIKEY1}&source=docs`
+        `https://api.twelvedata.com/logo?symbol=${req.body.symbol}&apikey=${process.env.APIKEY1}&source=docs`
       );
       const { url } = await responseLogo.json();
       result = {
