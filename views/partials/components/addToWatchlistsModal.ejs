@@ -93,38 +93,19 @@
               </div>
               <div class="bg-white rounded-lg shadow-lg mt-4">
                 <ul class="divide-y-8 text-gray-500">
+                  <% watchLists.forEach(watchList => { %>
                   <li
                     class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
                   >
-                    MARA - $82.23
+                    <%= watchList.name %>
                   </li>
-                  <li
-                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
-                  >
-                    AAPL - $120.22
-                  </li>
-                  <li
-                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
-                  >
-                    MSFT - $244.22
-                  </li>
-                  <li
-                    class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
-                  >
-                    NFLX - $46.22
-                  </li>
+                  <% }) %>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-3 sm:px-6 flex">
-          <button
-            type="submit"
-            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-          >
-            Submit
-          </button>
           <button
             type="button"
             id="cancelBtn"

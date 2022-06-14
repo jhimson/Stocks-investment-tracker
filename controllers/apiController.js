@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const Watchlist = require('../models/watchlistsModel');
 const searchStock = async (req, res) => {
   const response = await fetch(
     `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${req.body.symbol}&apikey=${process.env.APIKEY}`
@@ -14,11 +15,15 @@ const searchStock = async (req, res) => {
     address: data.Address,
     marketCap: parseFloat(data.MarketCapitalization),
     earningsPerShare: parseFloat(data.EPS),
-    fiveTwoWeekHigh: parseFloat(data["52WeekHigh"]),
-    fiveTwoWeekLow: parseFloat(data["52WeekLow"]),
-
+    fiveTwoWeekHigh: parseFloat(data['52WeekHigh']),
+    fiveTwoWeekLow: parseFloat(data['52WeekLow']),
+  };
+  try {
+    const watchLists = await Watchlist.find({ user: req.session._id });
+    res.render('results/index', { result, watchLists });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
-  res.render('results/index', {result})
 };
 
 module.exports = {
