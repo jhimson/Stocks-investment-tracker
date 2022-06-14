@@ -12,6 +12,10 @@ const watchlistsSchema = new Schema(
       type: String,
       required: true,
     },
+    stocks: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Stock'
+    }
   },
   { timestamps: true }
 );
