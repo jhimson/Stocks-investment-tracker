@@ -79,7 +79,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - Node.js
 - Express
 - MongoDB/Mongoose Database (Atlas)
-- Stocks API (https://www.alphavantage.co/)(https://twelvedata.com/docs#quote)
+- Stocks API (https://www.alphavantage.co/)
+- Stocks API (https://twelvedata.com)
 
 ## How to use:
 
