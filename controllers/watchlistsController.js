@@ -29,6 +29,7 @@ const createWatchList = async (req, res) => {
   }
 };
 
+
 // ! EDIT ROUTE
 const editWatchlist = async (req, res) => {
   try {
@@ -48,6 +49,15 @@ const updateWatchList = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//! ADD STOCK ROUTE
+const pushStock = async (req, res) => {
+  try {
+    const stock = await Watchlist.find({stocks: {$in: [req.params.id]}})
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+}
 
 //! DELETE ROUTE
 const deleteWatchlist = async (req, res) => {
