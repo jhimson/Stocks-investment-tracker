@@ -20,8 +20,6 @@
               ></path>
             </svg></button
         ></a>
-
-        <%# include('./updateWatchlistModal', {id}); -%>
         <form
           action="/watchlists/<%= watchlist.id %>?_method=DELETE"
           method="POST"

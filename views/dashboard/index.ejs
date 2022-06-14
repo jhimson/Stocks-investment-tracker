@@ -1,10 +1,21 @@
-<%- include('../partials/header', {title: 'Dashboard page'}); -%>
+<%- include('../partials/header', {title: 'Dashboard Page'}); -%>
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'dashboard'}); -%>
   <section class="w-full container p-4">
-    <h1 class="text-4xl mb-8">Welcome, <%= username %></h1>
-    <div class="flex items-center justify-between">
-      <div></div>
+    <div
+      class="container bg-gray-50 p-4 drop-shadow-xl border-2 border-gray-200 rounded-lg h-full"
+    >
+      <div class="flex justify-between">
+        <div>
+          <h1 class="text-4xl mb-14">Welcome, <%= username %></h1>
+        </div>
+      </div>
+      <div class="gap-x-8 flex flex-wrap items-start gap-y-8">
+        <%- include('../partials/components/dashboardCard', {title:
+        'Watchlists', total:totalWatchlists, icon: 'eye'}); -%> <%-
+        include('../partials/components/dashboardCard', {title:
+        'Transactions',total:totalTransactions, icon: 'trans'}); -%> -%>
+      </div>
     </div>
   </section>
 </div>
