@@ -88,8 +88,9 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 ## MVP Requirements:
 
-- [ ] CRUD functionality for Stocks transactions.
-
+- [X] CRUD functionality for Stocks transactions.
+- [X] CRUD functionality for Stocks watchlists.
+- [X] CRUD functionality for Stocks in the watchlists.
 
 
 ## Stretch goals / ICE BOX:
