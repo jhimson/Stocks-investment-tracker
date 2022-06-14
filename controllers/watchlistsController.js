@@ -4,7 +4,9 @@ const Watchlist = require('../models/watchlistsModel');
 //! GET ROUTE
 const getAllWatchlists = async (req, res) => {
   try {
-    const watchlists = await Watchlist.find({ user: req.session._id }).populate('stocks')
+    const watchlists = await Watchlist.find({ user: req.session._id }).populate(
+      'stocks'
+    );
     res.render('watchlists/index', {
       watchlists,
       username: req.session.username,
@@ -62,11 +64,28 @@ const addStockToWatchlist = async (req, res) => {
         const watchList = await Watchlist.findOne({ name });
         watchList.stocks.push(id);
         await watchList.save();
-        res.redirect('/watchlists')
+        res.redirect('/watchlists');
       } catch (error) {
         res.sendStatus(500).json({ message: error.message });
       }
     }
+  } catch (error) {
+    res.sendStatus(500).json({ message: error.message });
+  }
+};
+
+//! REMOVE/PULL STOCK ROUTE
+const removeStock = async (req, res) => {
+  console.log('test');
+  const { watchlist_id, stock_id } = req.params;
+  console.log(watchlist_id);
+  try {
+    const update = await Watchlist.updateOne(
+      { _id: watchlist_id },
+      { $pull: { stocks: stock_id  } },
+      { new: true }
+    );
+    res.redirect('/watchlists');
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
   }
@@ -90,4 +109,5 @@ module.exports = {
   updateWatchList,
   editWatchlist,
   addStockToWatchlist,
+  removeStock,
 };

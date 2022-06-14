@@ -9,6 +9,7 @@ const {
   updateWatchList,
   editWatchlist,
   addStockToWatchlist,
+  removeStock
 } = require('../controllers/watchlistsController');
 
 //! Authorization Middleware
@@ -24,6 +25,7 @@ router.get('/', getAllWatchlists);
 router.get('/new', newWatchlist);
 router.get('/edit/:id', editWatchlist);
 router.get('/:id/:name', addStockToWatchlist);
+router.get('/remove/:watchlist_id/:stock_id', removeStock);
 router.post('/', createWatchList);
 router.put('/edit/:id', updateWatchList);
 router.delete('/:id', deleteWatchlist);
