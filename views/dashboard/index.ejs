@@ -12,9 +12,10 @@
       </div>
       <div class="gap-x-8 flex flex-wrap items-start gap-y-8">
         <%- include('../partials/components/dashboardCard', {title:
-        'Watchlists', total:totalWatchlists, icon: 'eye'}); -%> <%-
-        include('../partials/components/dashboardCard', {title:
-        'Transactions',total:totalTransactions, icon: 'trans'}); -%> -%>
+        'Watchlists', total:totalWatchlists, icon: 'eye' , link:
+        '/watchlists'}); -%> <%- include('../partials/components/dashboardCard',
+        {title: 'Transactions',total:totalTransactions, icon: 'trans', link:
+        '/transactions'}); -%> -%>
       </div>
     </div>
   </section>
