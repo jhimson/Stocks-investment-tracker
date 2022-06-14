@@ -7,43 +7,43 @@
             <tr>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Name
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Symbol
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Type
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Price
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Quantity
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
               >
                 Date
               </th>
               <th
                 scope="col"
-                class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold"
                 colspan="2"
               >
                 Action
@@ -53,39 +53,41 @@
           <tbody>
             <% transactions.forEach(({_id, name, tickerSymbol, type, stockPrice,
             quantity,date}) => { %>
-            <tr class="border-b">
+            <tr
+              class="border-b <%= type === 'Buy' ? 'bg-green-100' : 'bg-red-300' %>"
+            >
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= name%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= tickerSymbol%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= type%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 $<%= stockPrice%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= quantity%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                class="text-sm text-gray-500 font-bold px-6 py-4 whitespace-nowrap"
               >
                 <%= date.toLocaleDateString()%>
               </td>
               <td
-                class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex gap-x-4"
+                class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap flex gap-x-4"
               >
                 <a href="transactions/edit/<%= _id %>"
                   ><button
