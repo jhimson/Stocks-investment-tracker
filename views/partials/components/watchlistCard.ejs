@@ -1,9 +1,9 @@
 <div class="rounded shadow-xl border-gray-100 border-2 flex p-4">
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2 flex justify-between">
-      <div><%= name %></div>
+      <div><%= watchlist.name %></div>
       <div>
-        <a href="/watchlists/edit/<%= id %>">
+        <a href="/watchlists/edit/<%= watchlist.id %>">
           <button class="btn btn-default text-blue-500">
             <svg
               class="w-6 h-6"
@@ -23,7 +23,7 @@
 
         <%# include('./updateWatchlistModal', {id}); -%>
         <form
-          action="/watchlists/<%= id %>?_method=DELETE"
+          action="/watchlists/<%= watchlist.id %>?_method=DELETE"
           method="POST"
           class="inline-block"
         >
@@ -48,26 +48,20 @@
     </div>
     <div class="bg-white rounded-lg shadow-lg">
       <ul class="divide-y-8 text-gray-500">
+        <% if(watchlist.stocks.length > 0) { %> <%
+        watchlist.stocks.forEach(stock => { %>
         <li
           class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
         >
-          MARA - $82.23
+          <%= stock.symbol %> - $<%= stock.price %>
         </li>
-        <li
+        <% }) %> <% } else { %>
+        <h1
           class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
         >
-          AAPL - $120.22
-        </li>
-        <li
-          class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
-        >
-          MSFT - $244.22
-        </li>
-        <li
-          class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
-        >
-          NFLX - $46.22
-        </li>
+          CURRENTLY NO STOCKS IN THE WATCHLIST
+        </h1>
+        <% } %>
       </ul>
     </div>
   </div>

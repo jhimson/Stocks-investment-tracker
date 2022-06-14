@@ -22,8 +22,8 @@
       </div>
       <div class="gap-x-8 flex flex-wrap items-center">
         <% watchlists.forEach(watchlist => { %> <%-
-        include('../partials/components/watchlistCard', {name:watchlist.name,
-        id:watchlist._id}) -%> <% }) %>
+        include('../partials/components/watchlistCard', {watchlist: watchlist})
+        -%> <% }) %>
       </div>
     </div>
   </section>

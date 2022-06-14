@@ -4,7 +4,7 @@ const Watchlist = require('../models/watchlistsModel');
 //! GET ROUTE
 const getAllWatchlists = async (req, res) => {
   try {
-    const watchlists = await Watchlist.find({ user: req.session._id });
+    const watchlists = await Watchlist.find({ user: req.session._id }).populate('stocks')
     res.render('watchlists/index', {
       watchlists,
       username: req.session.username,
