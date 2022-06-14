@@ -1,15 +1,16 @@
+const { setRandomFallback } = require('bcryptjs');
 const Watchlist = require('../models/watchlistsModel');
 
 //! GET ROUTE
 const getAllWatchlists = async (req, res) => {
   try {
-    const watchlists = await Watchlist.find({user:req.session._id});
+    const watchlists = await Watchlist.find({ user: req.session._id });
     res.render('watchlists/index', {
       watchlists,
       username: req.session.username,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.sendStatus(500).json({ message: error.message });
   }
 };
 
@@ -25,10 +26,9 @@ const createWatchList = async (req, res) => {
     await Watchlist.create(req.body);
     res.redirect('/watchlists');
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.sendStatus(500).json({ message: error.message });
   }
 };
-
 
 // ! EDIT ROUTE
 const editWatchlist = async (req, res) => {
@@ -36,7 +36,7 @@ const editWatchlist = async (req, res) => {
     const watchlist = await Watchlist.findById(req.params.id);
     res.render('watchlists/editWatchlistPage', { watchlist });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.sendStatus(500).json({ message: error.message });
   }
 };
 
@@ -46,18 +46,31 @@ const updateWatchList = async (req, res) => {
     await Watchlist.updateOne({ _id: req.params.id }, { $set: req.body });
     res.redirect('/watchlists');
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.sendStatus(500).json({ message: error.message });
   }
 };
 
 //! ADD STOCK ROUTE
-const pushStock = async (req, res) => {
+const addStockToWatchlist = async (req, res) => {
+  const { id, name } = req.params;
   try {
-    const stock = await Watchlist.find({stocks: {$in: [req.params.id]}})
+    const stock = await Watchlist.find({ name, stocks: { $in: [id] } });
+    console.log(stock.length);
+
+    if (stock.length === 0) {
+      try {
+        const watchList = await Watchlist.findOne({ name });
+        watchList.stocks.push(id);
+        await watchList.save();
+        res.redirect('/watchlists')
+      } catch (error) {
+        res.sendStatus(500).json({ message: error.message });
+      }
+    }
   } catch (error) {
-    res.status(500).json({message: error.message})
+    res.sendStatus(500).json({ message: error.message });
   }
-}
+};
 
 //! DELETE ROUTE
 const deleteWatchlist = async (req, res) => {
@@ -65,7 +78,7 @@ const deleteWatchlist = async (req, res) => {
     await Watchlist.deleteOne({ _id: req.params.id });
     res.redirect('/watchlists');
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.sendStatus(500).json({ message: error.message });
   }
 };
 
@@ -75,5 +88,6 @@ module.exports = {
   newWatchlist,
   createWatchList,
   updateWatchList,
-  editWatchlist
+  editWatchlist,
+  addStockToWatchlist,
 };
