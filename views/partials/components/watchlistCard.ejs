@@ -51,9 +51,11 @@
         <% if(watchlist.stocks.length > 0) { %> <%
         watchlist.stocks.forEach(stock => { %>
         <li
-          class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer"
+          class="p-3 hover:bg-blue-600 hover:text-blue-200 w-96 cursor-pointer flex justify-between"
         >
-          <%= stock.symbol %> - $<%= stock.price %>
+          <div><img src="<%= stock.logo %>" alt="" /></div>
+          <div><%= stock.symbol %></div>
+          <div class="text-green-500">$<%= stock.price %></div>
         </li>
         <% }) %> <% } else { %>
         <h1
