@@ -1,4 +1,5 @@
 <%- include('../partials/header', {title: 'Watchlists Page'}); -%>
+
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'Watchlists'}); -%>
   <section class="w-full h-screen p-4 mr-4">
@@ -20,6 +21,7 @@
           >
         </div>
       </div>
+      <%- include('../partials/components/displayMessage') -%>
       <div class="gap-x-8 flex flex-wrap items-start h-auto">
         <% watchlists.forEach(watchlist => { %> <%-
         include('../partials/components/watchlistCard', {watchlist: watchlist})
