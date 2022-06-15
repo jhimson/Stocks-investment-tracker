@@ -1,4 +1,3 @@
-const { setRandomFallback } = require('bcryptjs');
 const Watchlist = require('../models/watchlistsModel');
 
 //! GET ROUTE
@@ -80,7 +79,7 @@ const removeStock = async (req, res) => {
   const { watchlist_id, stock_id } = req.params;
   console.log(watchlist_id);
   try {
-    const update = await Watchlist.updateOne(
+    await Watchlist.updateOne(
       { _id: watchlist_id },
       { $pull: { stocks: stock_id } },
       { new: true }
