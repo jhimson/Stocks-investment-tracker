@@ -1,0 +1,19 @@
+<%- include('../partials/header', {title: 'News Page'}); -%>
+
+<div class="flex w-screen h-screen">
+  <%- include('../partials/components/sidenav', {active: 'News'}); -%>
+  <section class="w-auto h-screen p-4 mr-4">
+    <div
+      class="bg-white p-4 drop-shadow-xl border-2 border-gray-300 rounded-lg min-h-screen max-h-auto w-full"
+    >
+      <div class="flex justify-center items-center">
+        <h1 class="text-6xl mb-8 font-bold">Headline News</h1>
+      </div>
+      <div class="gap-x-8 flex flex-wrap items-start h-auto justify-around">
+        <% articles.forEach(article => { %> <%-
+        include('../partials/components/newsCard', {article: article}) -%> <% })
+        %>
+      </div>
+    </div>
+  </section>
+</div>

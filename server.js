@@ -11,6 +11,7 @@ const usersRoute = require('./routes/usersRoutes');
 const watchlistsRoute = require('./routes/watchlistsRoutes');
 const apiRoute = require('./routes/apiRoutes');
 const dashboardRoute = require('./routes/dashboardRoutes');
+const newsRoute = require('./routes/newsRoutes');
 
 app.set('view engine', 'ejs');
 
@@ -28,7 +29,6 @@ app.get('/signup', (req, res) => {
   } else {
     res.render('users/signupPage');
   }
-  
 });
 
 app.get('/login', (req, res) => {
@@ -37,7 +37,6 @@ app.get('/login', (req, res) => {
   } else {
     res.render('users/loginPage');
   }
-  
 });
 
 app.use('/transactions', transactionsRoute);
@@ -45,6 +44,7 @@ app.use('/users', usersRoute);
 app.use('/watchlists', watchlistsRoute);
 app.use('/api', apiRoute);
 app.use('/dashboard', dashboardRoute);
+app.use('/news', newsRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));
