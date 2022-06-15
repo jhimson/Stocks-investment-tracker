@@ -44,12 +44,12 @@
         </form>
       </div>
     </div>
-    <div class="bg-white rounded-lg shadow-lg">
+    <div class="bg-white rounded-lg shadow-lg border-2 border-gray-200">
       <ul class="divide-y-8 text-gray-500">
         <% if(watchlist.stocks.length > 0) { %> <%
         watchlist.stocks.forEach(stock => { %>
         <li
-          class="p-3 bg-gray-50 hover:bg-gray-200 hover:text-black hover:font-bold w-96 cursor-pointer flex justify-between items-center"
+          class="p-3 bg-gray-50 hover:bg-gray-200 hover:text-black hover:font-bold w-96 cursor-pointer flex justify-between items-center border-2 border-gray-200"
         >
           <div>
             <img
