@@ -7,12 +7,15 @@
     >
       <div class="flex justify-between">
         <div>
-          <h1 class="text-4xl mb-14">Welcome, <%= username %></h1>
+          <h1 class="text-4xl mb-14 font-bold">Welcome, <%= username %></h1>
         </div>
       </div>
       <div class="gap-x-8 flex flex-wrap items-start gap-y-8">
-        <%- include('../partials/components/dashboardCard', {title:
-        'Watchlists', total:totalWatchlists, icon: 'eye' , link: '/watchlists',
+        <%- include('../partials/components/dashboardCard', {title: `Total
+        Assets`, total:`$${totalAssets}`, icon: 'money' , link: '/watchlists',
+        background:'bg-green-700',hover:'bg-green-600'}); -%> <%-
+        include('../partials/components/dashboardCard', {title: 'Watchlists',
+        total:totalWatchlists, icon: 'eye' , link: '/watchlists',
         background:'bg-blue-600',hover:'bg-blue-500'}); -%> <%-
         include('../partials/components/dashboardCard', {title:
         'Transactions',total:totalTransactions, icon: 'trans', link:
