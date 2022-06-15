@@ -49,19 +49,41 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 <br/>
 
 ## Routes Table:
+
+### Users Routes:
 |Name  |Path   |HTTP Verb |Purpose|
 |:----|:-----|:--------|:-----|
-|INDEX |/transactions|GET       |Show all transactions|
-|INDEX |/watchlists|GET       |Show all users' watchlist|
-|SHOW |/transactions/:id|GET       |Show the stock transaction details|
-|SHOW |/watchlists/:id|GET       |Show the watchlist details and all the stocks in the watchlist|
+|REGISTER |/signup|GET       |Shows signup page|
+|LOGIN |/login|GET       |Shows login page|
+|LOGOUT |/logout|GET       |Logs the user out and destroys the session|
+|CREATE |/signup|POST       |Create/Signup a new user|
+|LOGIN |/login|POST       |Logs the user in|
+
+
+### Transaction Routes:
+|Name  |Path   |HTTP Verb |Purpose|
+|:----|:-----|:--------|:-----|
+|INDEX |/transactions|GET       |Shows all transactions|
 |EDIT |/transactions/edit/:id|GET    |Shows the form for the user to edit the transaction|
-|EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
-|NEW |/transactions/new|POST    |Create new transactions|
-|NEW |/watchlists/new|POST    |Create new watchlist|
-|UPDATE |/transactions/:id|PUT    |Updates the transaction with the given ID|
-|UPDATE |/watchlists/:id|PUT    |Updates the watchlist with the given ID|
+|CREATE |/transactions|POST    |Creates a new transaction|
 |DESTROY |/transactions/:id|DELETE    |Deletes the transaction with the given ID|
+|UPDATE |/transactions/:id|PUT    |Updates the transaction with the given ID|
+
+### Watchlists Routes:
+|INDEX |/watchlists|GET       |Shows all the watchlist of the user loggedIn|
+|NEW |/watchlists/new|POST    |Renders the new watchlist form|
+|EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
+|CREATE |/watchlists/|POST    |Creates a new watchlist|
+|UPDATE |/watchlists/edit/:id|PUT    |Updates the wathclist with the given ID|
+
+### Stocks Routes:
+|CREATE |/transactions/:id|GET       |Show the stock transaction details|
+
+
+
+
+|UPDATE |/watchlists/:id|PUT    |Updates the watchlist with the given ID|
+
 |DESTROY |/watchlists/:id|DELETE    |Deletes the watchlist with the given ID|
 
 
