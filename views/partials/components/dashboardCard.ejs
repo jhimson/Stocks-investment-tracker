@@ -1,22 +1,22 @@
 <a href="<%= link %>"
   ><div
-    class="rounded shadow-xl border-gray-200 border-2 flex p-4 cursor-pointer"
+    class="rounded shadow-xl border-gray-300 border-2 flex p-4 cursor-pointer <%= background %> hover:<%=hover%>"
   >
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2 flex justify-between w-96">
         <div class="flex gap-y-6 flex-col">
           <div>
-            <h1 class="text-gray-400 text-2xl"><%= title %></h1>
+            <h1 class="text-white text-2xl"><%= title %></h1>
           </div>
           <div>
-            <h1><%= total %></h1>
+            <h1 class="text-white text-2xl"><%= total %></h1>
           </div>
         </div>
         <div class="w-10 h-10 flex justify-center items-center">
           <% if(icon === 'eye') { %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-14 w-14 text-gray-500"
+            class="h-14 w-14 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -36,7 +36,7 @@
           <% } else { %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-14 w-14 text-gray-500"
+            class="h-14 w-14 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
