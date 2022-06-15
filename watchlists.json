@@ -1,0 +1,142 @@
+[{
+  "_id": {
+    "$oid": "62a9b6fc0a13986d10853bb1"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test1",
+  "stocks": [
+    {
+      "$oid": "62a9391bbf9f062e5ed0b251"
+    },
+    {
+      "$oid": "62a93984bf9f062e5ed0b263"
+    },
+    {
+      "$oid": "62a93cc13d3ea13e0394f18a"
+    },
+    {
+      "$oid": "62a9397dbf9f062e5ed0b25a"
+    },
+    {
+      "$oid": "62a93c923d3ea13e0394f172"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655289596838"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290064559"
+    }
+  },
+  "__v": 6
+},{
+  "_id": {
+    "$oid": "62a9b7070a13986d10853bbb"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test2",
+  "stocks": [
+    {
+      "$oid": "62a93d283d3ea13e0394f1cf"
+    },
+    {
+      "$oid": "62a93c7f3d3ea13e0394f160"
+    },
+    {
+      "$oid": "62a93ccd3d3ea13e0394f193"
+    },
+    {
+      "$oid": "62a9b8590a13986d10853c22"
+    },
+    {
+      "$oid": "62a9b6520a13986d10853b56"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655289607998"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290327114"
+    }
+  },
+  "__v": 5
+},{
+  "_id": {
+    "$oid": "62a9b9da71b899fd8e951f1b"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test3",
+  "stocks": [
+    {
+      "$oid": "62a93984bf9f062e5ed0b263"
+    },
+    {
+      "$oid": "62a93c7f3d3ea13e0394f160"
+    },
+    {
+      "$oid": "62a93ccd3d3ea13e0394f193"
+    },
+    {
+      "$oid": "62a9b6520a13986d10853b56"
+    },
+    {
+      "$oid": "62a9ba1171b899fd8e951f49"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290330399"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290387994"
+    }
+  },
+  "__v": 5
+},{
+  "_id": {
+    "$oid": "62a9b9dd71b899fd8e951f1f"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test4",
+  "stocks": [
+    {
+      "$oid": "62a9391bbf9f062e5ed0b251"
+    },
+    {
+      "$oid": "62a9397dbf9f062e5ed0b25a"
+    },
+    {
+      "$oid": "62a93984bf9f062e5ed0b263"
+    },
+    {
+      "$oid": "62a93d283d3ea13e0394f1cf"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290333457"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290425121"
+    }
+  },
+  "__v": 4
+}]

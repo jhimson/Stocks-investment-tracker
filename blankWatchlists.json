@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "62a9ba75d905310cfdcd8670"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test1",
+  "stocks": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290485699"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290485699"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62a9ba77d905310cfdcd8673"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test2",
+  "stocks": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290487745"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290487745"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62a9ba7bd905310cfdcd8676"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test3",
+  "stocks": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290491719"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290491719"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62a9ba80d905310cfdcd867a"
+  },
+  "user": {
+    "$oid": "62a62fb91a82f9aee8ae803b"
+  },
+  "name": "test3",
+  "stocks": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1655290496078"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1655290496078"
+    }
+  },
+  "__v": 0
+}]
