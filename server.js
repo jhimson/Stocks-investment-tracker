@@ -42,7 +42,7 @@ app.get('/login', (req, res) => {
 app.use('/transactions', transactionsRoute);
 app.use('/users', usersRoute);
 app.use('/watchlists', watchlistsRoute);
-app.use('/api', apiRoute);
+app.use('/stocks', apiRoute);
 app.use('/dashboard', dashboardRoute);
 app.use('/news', newsRoute);
 
