@@ -2,7 +2,7 @@
 
 
 ## Premise:
-TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlists of their favorite stocks.
+TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlista and can add as many stocks as they want in the watchlist.
 
 
 ## User Story
@@ -81,6 +81,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - MongoDB/Mongoose Database (Atlas)
 - Stocks API (https://www.alphavantage.co/)
 - Stocks API (https://twelvedata.com)
+- News API (https://newsapi.org/)
+- Heroku
 
 ## How to use:
 
@@ -94,6 +96,6 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 
 ## Stretch goals / ICE BOX:
-- [ ] Integrate a news api, so the users can also have information about latest news of the stocks on their watchlists.
+- [x] Integrate a news api, so the users can also have information about latest news of the stocks on their watchlists.
 - [ ] Add a userProfile Schema and page so other users can view the watchlists of other users.
 - [ ] Implement OAuth authentication to be able to login using their google account.
