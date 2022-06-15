@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-
+const moment = require('moment');
 const fetchTopHeadlines = async (req, res) => {
   try {
     const response = await fetch(
@@ -9,7 +9,10 @@ const fetchTopHeadlines = async (req, res) => {
     const { articles } = await response.json();
 
     if (articles) {
-      res.render('news/index', {articles});
+      let formatedArticles = articles.map(article => {
+        article.publishedAt = moment(article.publishedAt).startOf('hour').fromNow(); 
+      })
+      res.render('news/index', { articles });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
