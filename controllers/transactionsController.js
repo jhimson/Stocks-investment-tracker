@@ -12,7 +12,6 @@ const getAllTransactions = async (req, res) => {
     let totalBuy = 0;
     let totalSell = 0;
     if (transactions) {
-      // console.log(transactions)
       let buyTransactions = transactions.filter(({ type }) => type === 'Buy');
       let sellTransactions = transactions.filter(({ type }) => type === 'Sell');
 
@@ -28,12 +27,6 @@ const getAllTransactions = async (req, res) => {
         totalSell += product;
       });
 
-      console.log(`TOTAL BUYZZZ: ${totalBuy}`);
-      console.log(`TOTAL SELZZZZ: ${totalSell}`);
-      console.log(`TOTAL ASSETZZZ: ${totalBuy - totalSell}`);
-
-      console.log(`Buy Trans: ${buyTransactions}`);
-      console.log(`Sell Trans: ${sellTransactions}`);
        localStorage.setItem(
       'totalAssets',
       `${totalBuy - totalSell}`
