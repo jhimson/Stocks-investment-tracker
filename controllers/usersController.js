@@ -1,4 +1,7 @@
 const User = require('../models/usersModel');
+const Transaction = require('../models/transactionsModel');
+let LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 const bcrypt = require('bcryptjs');
 
 //! CREATE USER
@@ -41,6 +44,40 @@ const loginUser = async (req, res) => {
           req.session.username = username;
           req.session.loggedIn = true;
           console.log(req.session);
+
+          // !! Retrieve all the transactions from the DB and calculate total Assets
+          try {
+            const transactions = await Transaction.find({
+              user: req.session._id,
+            });
+            let totalBuy = 0;
+            let totalSell = 0;
+            if (transactions) {
+              let buyTransactions = transactions.filter(
+                ({ type }) => type === 'Buy'
+              );
+              let sellTransactions = transactions.filter(
+                ({ type }) => type === 'Sell'
+              );
+
+              buyTransactions.forEach(({ stockPrice, quantity }) => {
+                let product = 0;
+                product = stockPrice * quantity;
+                totalBuy += product;
+              });
+
+              sellTransactions.forEach(({ stockPrice, quantity }) => {
+                let product = 0;
+                product = stockPrice * quantity;
+                totalSell += product;
+              });
+
+              localStorage.setItem('totalAssets', `${totalBuy - totalSell}`);
+            }
+          } catch (error) {
+            res.status(500).json({ message: error.message });
+          }
+
           //? Redirect to transactions page if successful
           res.redirect('/dashboard');
         } else {
