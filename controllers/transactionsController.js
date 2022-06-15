@@ -1,4 +1,6 @@
 const Transaction = require('../models/transactionsModel');
+let LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 
 //! GET ROUTE
 //? Retrieve all transactions from the database
@@ -32,7 +34,12 @@ const getAllTransactions = async (req, res) => {
 
       console.log(`Buy Trans: ${buyTransactions}`);
       console.log(`Sell Trans: ${sellTransactions}`);
+       localStorage.setItem(
+      'totalAssets',
+      `${totalBuy - totalSell}`
+    );
     }
+   
     res.render('transactions/index', {
       transactions,
       username: req.session.username,

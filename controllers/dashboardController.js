@@ -12,6 +12,7 @@ const renderDashboardPage = async (req, res) => {
       username: req.session.username,
       totalWatchlists: watchlistsCount,
       totalTransactions: transactionsCount,
+      totalAssets: localStorage.getItem('totalAssets')
     });
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
