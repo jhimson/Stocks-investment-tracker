@@ -7,7 +7,37 @@ const getAllTransactions = async (req, res) => {
     const transactions = await Transaction.find({
       user: req.session._id,
     });
-    res.render('transactions/index', { transactions, username: req.session.username});
+    let totalBuy = 0;
+    let totalSell = 0;
+    if (transactions) {
+      // console.log(transactions)
+      let buyTransactions = transactions.filter(({ type }) => type === 'Buy');
+      let sellTransactions = transactions.filter(({ type }) => type === 'Sell');
+
+      buyTransactions.forEach(({ stockPrice, quantity }) => {
+        let product = 0;
+        product = stockPrice * quantity;
+        totalBuy += product;
+      });
+
+      sellTransactions.forEach(({ stockPrice, quantity }) => {
+        let product = 0;
+        product = stockPrice * quantity;
+        totalSell += product;
+      });
+
+      console.log(`TOTAL BUYZZZ: ${totalBuy}`);
+      console.log(`TOTAL SELZZZZ: ${totalSell}`);
+      console.log(`TOTAL ASSETZZZ: ${totalBuy - totalSell}`);
+
+      console.log(`Buy Trans: ${buyTransactions}`);
+      console.log(`Sell Trans: ${sellTransactions}`);
+    }
+    res.render('transactions/index', {
+      transactions,
+      username: req.session.username,
+      totalAsset: totalBuy - totalSell,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
