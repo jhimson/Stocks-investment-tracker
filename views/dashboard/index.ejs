@@ -1,28 +1,29 @@
 <%- include('../partials/header', {title: 'Dashboard Page'}); -%>
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'dashboard'}); -%>
-  <section class="w-full p-4">
-    <div
+  <section
+    class="w-full p-4 bg-gray-50 border-2 border-gray-200 rounded-lg ml-2 mt-4 mr-4"
+  >
+    <!-- <div
       class="bg-gray-100 p-4 drop-shadow-xl border-2 border-gray-300 rounded-lg h-full"
-    >
-      <div class="flex justify-between">
-        <div>
-          <h1 class="text-4xl mb-14 font-bold">Welcome, <%= username %></h1>
-        </div>
-      </div>
-      <div class="gap-x-8 flex flex-wrap items-start gap-y-8">
-        <%- include('../partials/components/dashboardCard', {title: `Total
-        Assets`, total:`$${totalAssets}`, icon: 'money' , link: '/watchlists',
-        background:'bg-green-700',hover:'bg-green-600'}); -%> <%-
-        include('../partials/components/dashboardCard', {title: 'Watchlists',
-        total:totalWatchlists, icon: 'eye' , link: '/watchlists',
-        background:'bg-blue-600',hover:'bg-blue-500'}); -%> <%-
-        include('../partials/components/dashboardCard', {title:
-        'Transactions',total:totalTransactions, icon: 'trans', link:
-        '/transactions',background:'bg-slate-800',hover:'bg-slate-700'}); -%>
-        -%>
-      </div>
+    > -->
+    <div class="flex justify-between items-center">
+      <h1 class="text-4xl mb-8 font-bold">Dashboard</h1>
+      <h1 class="text-2xl mb-8 font-bold">Welcome, <%= username %></h1>
     </div>
+    <div class="flex justify-between"></div>
+    <div class="gap-x-8 flex flex-wrap items-start gap-y-8">
+      <%- include('../partials/components/dashboardCard', {title: `Total
+      Assets`, total:`$${totalAssets}`, icon: 'money' , link: '/watchlists',
+      background:'bg-green-700',hover:'bg-green-600'}); -%> <%-
+      include('../partials/components/dashboardCard', {title: 'Watchlists',
+      total:totalWatchlists, icon: 'eye' , link: '/watchlists',
+      background:'bg-blue-600',hover:'bg-blue-500'}); -%> <%-
+      include('../partials/components/dashboardCard', {title:
+      'Transactions',total:totalTransactions, icon: 'trans', link:
+      '/transactions',background:'bg-slate-800',hover:'bg-slate-700'}); -%> -%>
+    </div>
+    <!-- </div> -->
   </section>
 </div>
 <%- include('../partials/footer'); -%>
