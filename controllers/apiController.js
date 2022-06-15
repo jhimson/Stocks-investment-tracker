@@ -4,7 +4,6 @@ const Stock = require('../models/stockModel');
 const searchStock = async (req, res) => {
   let result;
   try {
-    
     // ! If req.param.symbol exists, assign it to be the value of req.body.symbol
     if (req.params.symbol) {
       req.body.symbol = req.params.symbol;
