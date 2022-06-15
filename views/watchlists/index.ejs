@@ -3,7 +3,7 @@
   <%- include('../partials/components/sidenav', {active: 'Watchlists'}); -%>
   <section class="w-full h-screen p-4 mr-4">
     <div
-      class="bg-white p-4 drop-shadow-xl border-2 border-gray-300 rounded-lg h-screen w-full"
+      class="bg-white p-4 drop-shadow-xl border-2 border-gray-300 rounded-lg h-auto w-full"
     >
       <div class="flex justify-between">
         <div>
@@ -20,7 +20,7 @@
           >
         </div>
       </div>
-      <div class="gap-x-8 flex flex-wrap items-start h-screen">
+      <div class="gap-x-8 flex flex-wrap items-start h-auto">
         <% watchlists.forEach(watchlist => { %> <%-
         include('../partials/components/watchlistCard', {watchlist: watchlist})
         -%> <% }) %>
