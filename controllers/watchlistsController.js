@@ -1,5 +1,7 @@
 const { setRandomFallback } = require('bcryptjs');
 const Watchlist = require('../models/watchlistsModel');
+let LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 
 //! GET ROUTE
 const getAllWatchlists = async (req, res) => {
@@ -82,10 +84,18 @@ const removeStock = async (req, res) => {
   try {
     const update = await Watchlist.updateOne(
       { _id: watchlist_id },
-      { $pull: { stocks: stock_id  } },
+      { $pull: { stocks: stock_id } },
       { new: true }
     );
+    localStorage.setItem(
+      'displayMessage',
+      'Successfully removed stock from the watchlist'
+    );
+    setTimeout(() => {
+      localStorage.setItem('displayMessage', '');
+    }, 3000);
     res.redirect('/watchlists');
+    
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
   }

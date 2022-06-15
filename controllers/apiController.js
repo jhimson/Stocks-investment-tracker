@@ -21,34 +21,39 @@ const searchStock = async (req, res) => {
     if (stock.length) {
       result = stock[0];
     } else {
-      // ! If stock doesn't exists in the database, fetch the stock from the api then save it to the database
-      const response = await fetch(
-        `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${req.body.symbol}&apikey=${process.env.APIKEY2}`
-      );
-      const data = await response.json();
-
       //! Fetch logo from a different API
       const responseLogo = await fetch(
         `https://api.twelvedata.com/logo?symbol=${req.body.symbol}&apikey=${process.env.APIKEY1}&source=docs`
       );
       const { url } = await responseLogo.json();
-      result = {
-        logo: url,
-        symbol: data.Symbol,
-        name: data.Name,
-        price: parseFloat(price),
-        description: data.Description,
-        sector: data.Sector,
-        industry: data.Industry,
-        address: data.Address,
-        marketCap: parseFloat(data.MarketCapitalization),
-        earningsPerShare: parseFloat(data.EPS),
-        fiftyTwoWeekHigh: parseFloat(data['52WeekHigh']),
-        fiftyTwoWeekLow: parseFloat(data['52WeekLow']),
-      };
 
-      let newStock = await Stock.create(result);
-      result._id = newStock._id;
+      try {
+        // ! If stock doesn't exists in the database, fetch the stock from the api then save it to the database
+        const response = await fetch(
+          `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${req.body.symbol}&apikey=${process.env.APIKEY2}`
+        );
+        const data = await response.json();
+
+        result = {
+          logo: url,
+          symbol: data.Symbol,
+          name: data.Name,
+          price: parseFloat(price),
+          description: data.Description,
+          sector: data.Sector,
+          industry: data.Industry,
+          address: data.Address,
+          marketCap: parseFloat(data.MarketCapitalization),
+          earningsPerShare: parseFloat(data.EPS),
+          fiftyTwoWeekHigh: parseFloat(data['52WeekHigh']),
+          fiftyTwoWeekLow: parseFloat(data['52WeekLow']),
+        };
+
+        let newStock = await Stock.create(result);
+        result._id = newStock._id;
+      } catch (error) {
+        res.status(500).json({message: `Ticker symbol doesn't exist! Please try again`})
+      }
     }
   } catch (error) {
     console.log(error.message);
