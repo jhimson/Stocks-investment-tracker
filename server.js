@@ -23,11 +23,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/signup', (req, res) => {
-  res.render('users/signupPage');
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+  } else {
+    res.render('users/signupPage');
+  }
+  
 });
 
 app.get('/login', (req, res) => {
-  res.render('users/loginPage');
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+  } else {
+    res.render('users/loginPage');
+  }
+  
 });
 
 app.use('/transactions', transactionsRoute);
