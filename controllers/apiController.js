@@ -13,7 +13,7 @@ const searchStock = async (req, res) => {
     const { price } = await responsePrice.json();
 
     // ! If stock already exists in the database, use the data to feed the display for stock search and don't need to re-fetch from API
-    const stock = await Stock.find({ symbol: req.body.symbol });
+    let stock = await Stock.find({ symbol: req.body.symbol });
     if (stock.length) {
       result = stock[0];
     } else {
@@ -43,14 +43,17 @@ const searchStock = async (req, res) => {
         fiftyTwoWeekLow: parseFloat(data['52WeekLow']),
       };
 
-      await Stock.create(result);
+      let newStock = await Stock.create(result);
+      result._id = newStock._id;
     }
   } catch (error) {
     console.log(error.message);
   }
 
   try {
-    if (result) {
+    if (result._id) {
+      console.log('WTF');
+      console.log('lgooooo', result.logo);
       const watchLists = await Watchlist.find({ user: req.session._id });
       res.render('results/index', { result, watchLists });
     }

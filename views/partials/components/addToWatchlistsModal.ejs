@@ -54,6 +54,13 @@
                 </h3>
               </div>
               <div class="bg-white rounded-lg shadow-lg mt-4">
+                <%
+                console.log(`------------------------------------------------------`)
+                %> <% console.log(`Watchlists: ${watchLists}`) %> <%
+                console.log(`------------------------------------------------------`)
+                %> <% console.log(`Result WTF: ${result.logo}`) %> <%
+                console.log(`------------------------------------------------------`)
+                %>
                 <ul class="divide-y-8 text-gray-500">
                   <% watchLists.forEach(watchList => { %>
                   <!-- Sends the stock id and watchlist name to the watchlist controller - data will be use to add in the watchlists collection -->
