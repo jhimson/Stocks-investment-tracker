@@ -4,8 +4,13 @@ const Stock = require('../models/stockModel');
 const searchStock = async (req, res) => {
   let result;
   try {
-    // ! Fetch stock price
+    
+    // ! If req.param.symbol exists, assign it to be the value of req.body.symbol
+    if (req.params.symbol) {
+      req.body.symbol = req.params.symbol;
+    }
 
+    // ! Fetch stock price
     const responsePrice = await fetch(
       `https://api.twelvedata.com/price?symbol=${req.body.symbol}&apikey=${process.env.APIKEY1}&source=docs`
     );
