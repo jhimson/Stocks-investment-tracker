@@ -67,6 +67,8 @@ const addStockToWatchlist = async (req, res) => {
       } catch (error) {
         res.sendStatus(500).json({ message: error.message });
       }
+    } else {
+      res.json({message: 'Stock already exists in the watchlist! Please try again'})
     }
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
