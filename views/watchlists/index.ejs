@@ -7,7 +7,7 @@
       class="bg-white p-4 drop-shadow-xl border-2 border-gray-300 rounded-lg min-h-screen max-h-auto w-full"
     >
       <div
-        class="flex justify-between bg-gray-100 m-2 p-6 items-center rounded-xl border-2 border-gray-200"
+        class="flex justify-between bg-gray-100 m-2 p-6 items-center rounded-xl border-2 border-gray-200 mb-8"
       >
         <div>
           <h1 class="text-4xl font-bold">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <% if(watchlists.length) { %>
-      <div class="gap-x-8 flex flex-wrap items-start h-auto">
+      <div class="gap-x-8 flex flex-wrap items-start h-auto p-2">
         <% watchlists.forEach(watchlist => { %> <%-
         include('../partials/components/watchlistCard', {watchlist: watchlist})
         -%> <% }) %>
