@@ -106,12 +106,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - News API (https://newsapi.org/)
 - Heroku
 
-## How to use:
-
-
 
 ## MVP Requirements:
-
 - [X] CRUD functionality for Stocks transactions.
 - [X] CRUD functionality for Stocks watchlists.
 - [X] CRUD functionality for Stocks in the watchlists.
