@@ -11,7 +11,9 @@
       >
         <h1 class="animate-bounce">News Headlines</h1>
       </div>
-      <div class="gap-x-8 flex flex-wrap items-start h-auto justify-center">
+      <div
+        class="gap-x-20 gap-y-12 flex flex-wrap items-start h-auto justify-center"
+      >
         <% articles.forEach(article => { %> <%-
         include('../partials/components/newsCard', {article: article}) -%> <% })
         %>
