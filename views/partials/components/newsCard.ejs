@@ -1,5 +1,5 @@
 <div
-  class="bg-white overflow-hidden border-2 border-gray-200 w-1/4 mb-4 rounded-lg"
+  class="bg-white overflow-hidden border-2 border-gray-200 w-1/4 mb-4 rounded-lg drop-shadow-2xl"
 >
   <a href="<%= article.url %>" target="_blank"
     ><img
@@ -11,8 +11,10 @@
     <p class="text-blue-500 font-semibold text-xs mb-1 leading-none">
       Source: <%= article.source.name %>
     </p>
-    <a href="<%= article.url %>"
-      ><h3 class="font-semibold mb-2 text-xl leading-tight sm:leading-normal">
+    <a href="<%= article.url %>" target="_blank"
+      ><h3
+        class="font-semibold mb-2 text-xl leading-tight sm:leading-normal h-32"
+      >
         <%= article.title %>
       </h3></a
     >
