@@ -1,4 +1,6 @@
 <%- include('../partials/header', {title: 'User Login'}); -%>
-<header><%- include('../partials/components/navbar'); -%></header>
+<header>
+  <%- include('../partials/components/navbar', {active:'login'}); -%>
+</header>
 <%- include('../partials/components/loginForm') -%>
 <%-include('../partials/footer'); -%>
