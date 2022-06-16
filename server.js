@@ -47,4 +47,5 @@ app.use('/dashboard', dashboardRoute);
 app.use('/news', newsRoute);
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));
+const port = 3000;
+app.listen(PORT || port, () => console.log(`Now Listening on port ${PORT || port}`));
