@@ -21,12 +21,19 @@
           >
         </div>
       </div>
-      <%- include('../partials/components/displayMessage') -%>
+      <%- include('../partials/components/displayMessage') -%> <%
+      if(watchlists.length) { %>
       <div class="gap-x-8 flex flex-wrap items-start h-auto">
         <% watchlists.forEach(watchlist => { %> <%-
         include('../partials/components/watchlistCard', {watchlist: watchlist})
         -%> <% }) %>
       </div>
+      <% } else { %>
+      <div class="flex items-center justify-center mt-20">
+        <h1 class="text-6xl">No Watchlists found!</h1>
+      </div>
+
+      <% } %>
     </div>
   </section>
 </div>
