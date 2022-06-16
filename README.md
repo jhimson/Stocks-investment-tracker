@@ -1,8 +1,9 @@
 # TheHood - Stocks Investment Tracker
 
+[Live Preview](https://arcane-tor-92840.herokuapp.com/)
 
 ## Premise:
-TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlista and can add as many stocks as they want in the watchlist.
+TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow a user to keep track all his/her buy and sell transaction of stocks. Users can also create a watchlist and can add as many stocks as they want in the watchlist. Users can also check out the news headlines.
 
 
 ## User Story
@@ -105,12 +106,9 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - News API (https://newsapi.org/)
 - Heroku
 
-## How to use:
-
-
-
+<br/>
+<br/>
 ## MVP Requirements:
-
 - [X] CRUD functionality for Stocks transactions.
 - [X] CRUD functionality for Stocks watchlists.
 - [X] CRUD functionality for Stocks in the watchlists.
