@@ -39,11 +39,30 @@ const searchWatchlist = async (req, res) => {
 //! CREATE ROUTE
 const createWatchList = async (req, res) => {
   req.body.user = req.session._id;
+
+  //! Check if watchlist already exists in the DB filtered by user id
   try {
-    await Watchlist.create(req.body);
-    res.redirect('/watchlists');
+    const watchlist = await Watchlist.find({
+      name: req.body.name,
+      user: req.body.user,
+    }).count();
+     
+
+    //! if watchlist exists throw an error to the user
+    if (watchlist) {
+      res.json({ message: 'Watchlist already exists! Try a different name' });
+
+      //! if it doesn't exist, create the watchlist! 
+    } else {
+      try {
+        await Watchlist.create(req.body);
+        res.redirect('/watchlists');
+      } catch (error) {
+        res.json({ message: error.message });
+      }
+    }
   } catch (error) {
-    res.sendStatus(500).json({ message: error.message });
+    res.json({ message: message.error });
   }
 };
 
