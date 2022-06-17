@@ -20,6 +20,23 @@ const newWatchlist = async (req, res) => {
   res.render('watchlists/newWatchlistPage');
 };
 
+//! SEARCH ROUTE
+const searchWatchlist = async (req, res) => {
+  console.log(req.body);
+  try {
+    const watchlist = await Watchlist.find({
+      name: { $regex: req.body.watchlist_id },
+      user: req.session._id,
+    }).populate('stocks');
+    res.render('watchlists/showWatchlistPage', {
+      watchlist,
+      username: req.session.username,
+    });
+  } catch (error) {
+    res.sendStatus(500).json({ message: error.message });
+  }
+};
+
 //! CREATE ROUTE
 const createWatchList = async (req, res) => {
   req.body.user = req.session._id;
@@ -68,7 +85,9 @@ const addStockToWatchlist = async (req, res) => {
         res.sendStatus(500).json({ message: error.message });
       }
     } else {
-      res.json({message: 'Stock already exists in the watchlist! Please try again'})
+      res.json({
+        message: 'Stock already exists in the watchlist! Please try again',
+      });
     }
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
@@ -87,7 +106,6 @@ const removeStock = async (req, res) => {
       { new: true }
     );
     res.redirect('/watchlists');
-    
   } catch (error) {
     res.sendStatus(500).json({ message: error.message });
   }
@@ -112,4 +130,5 @@ module.exports = {
   editWatchlist,
   addStockToWatchlist,
   removeStock,
+  searchWatchlist,
 };

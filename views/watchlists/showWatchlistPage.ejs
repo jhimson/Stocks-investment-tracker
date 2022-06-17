@@ -26,15 +26,15 @@
           >
         </div>
       </div>
-      <% if(watchlists.length) { %>
+      <% if(watchlist.length) { %>
       <div class="gap-x-8 flex flex-wrap items-start h-auto p-2">
-        <% watchlists.forEach(watchlist => { %> <%-
-        include('../partials/components/watchlistCard', {watchlist: watchlist})
-        -%> <% }) %>
+        <% watchlist.forEach(list => { %> <%-
+        include('../partials/components/watchlistCard', {watchlist: list}) -%>
+        <% }) %>
       </div>
       <% } else { %>
       <div class="flex items-center justify-center mt-20">
-        <h1 class="text-6xl">No Watchlists found!</h1>
+        <h1 class="text-6xl">Watchlist not found! Try again</h1>
       </div>
 
       <% } %>
