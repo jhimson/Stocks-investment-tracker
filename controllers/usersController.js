@@ -81,13 +81,13 @@ const loginUser = async (req, res) => {
           //? Redirect to transactions page if successful
           res.redirect('/dashboard');
         } else {
-          res.json({ error: `Password doesn't match` });
+          res.json({ error: `Invalid Username/Password! Try again.` });
         }
       } catch (error) {
         res.json({ message: error.message });
       }
     } else {
-      res.json({ error: "User doesn't exist!" });
+      res.json({ error: "Invalid Username/Password! Try again." });
     }
   } catch (error) {
     res.json({ message: error.message });
