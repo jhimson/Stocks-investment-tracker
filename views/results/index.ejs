@@ -19,10 +19,11 @@
           <b>Headquarters:</b> <%= result.address %>
         </p>
         <p class="mt-5 text-xl leading-8 text-white text-left">
-          <b>Market Cap:</b> $<%= result.marketCap %>
+          <b>Market Cap:</b> $<%=
+          result.marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') %>
         </p>
         <p class="mt-5 text-xl leading-8 text-white text-left">
-          <b>Price:</b> $<%= result.price %>
+          <b>Price:</b> $<%= parseFloat(result.price).toFixed(2) %>
         </p>
         <p class="mt-5 text-xl leading-8 text-white text-left">
           <b>52 Week High:</b> $<%= result.fiftyTwoWeekHigh %>
