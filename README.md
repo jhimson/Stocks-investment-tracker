@@ -111,6 +111,7 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 <br/>
 <br/>
+
 ## MVP Requirements:
 
 - [X] CRUD functionality for Stocks transactions.
