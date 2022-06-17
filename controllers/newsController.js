@@ -9,7 +9,7 @@ const fetchTopHeadlines = async (req, res) => {
     const { articles } = await response.json();
 
     if (articles) {
-      let formatedArticles = articles.map(article => {
+        articles.map(article => {
         article.publishedAt = moment(article.publishedAt).startOf('hour').fromNow(); 
       })
       res.render('news/index', { articles });

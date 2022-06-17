@@ -61,8 +61,6 @@ const searchStock = async (req, res) => {
 
   try {
     if (result._id) {
-      console.log('WTF');
-      console.log('lgooooo', result.logo);
       const watchLists = await Watchlist.find({ user: req.session._id });
       res.render('results/index', { result, watchLists });
     }

@@ -22,7 +22,6 @@ const newWatchlist = async (req, res) => {
 
 //! SEARCH ROUTE
 const searchWatchlist = async (req, res) => {
-  console.log(req.body);
   try {
     const watchlist = await Watchlist.find({
       name: { $regex: req.body.watchlist_id },
@@ -73,7 +72,6 @@ const addStockToWatchlist = async (req, res) => {
   const { id, name } = req.params;
   try {
     const stock = await Watchlist.find({ name, stocks: { $in: [id] } });
-    console.log(stock.length);
 
     if (stock.length === 0) {
       try {
@@ -96,9 +94,7 @@ const addStockToWatchlist = async (req, res) => {
 
 //! REMOVE/PULL STOCK ROUTE
 const removeStock = async (req, res) => {
-  console.log('test');
   const { watchlist_id, stock_id } = req.params;
-  console.log(watchlist_id);
   try {
     await Watchlist.updateOne(
       { _id: watchlist_id },
