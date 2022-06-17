@@ -112,12 +112,15 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 <br/>
 <br/>
 ## MVP Requirements:
+
 - [X] CRUD functionality for Stocks transactions.
 - [X] CRUD functionality for Stocks watchlists.
 - [X] CRUD functionality for Stocks in the watchlists.
 
 
 ## Stretch goals / ICE BOX:
+
 - [x] Integrate a news api, so the users can also have information about latest news of the stocks on their watchlists.
+- [ ] Responsive design
 - [ ] Add a userProfile Schema and page so other users can view the watchlists of other users.
 - [ ] Implement OAuth authentication to be able to login using their google account.
