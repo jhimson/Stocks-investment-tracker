@@ -3,6 +3,17 @@ const Watchlist = require('../models/watchlistsModel');
 const Stock = require('../models/stockModel');
 const searchStock = async (req, res) => {
   let result;
+
+  try {
+    await Stock.updateOne(
+      { symbol: req.body.symbol },
+      { $inc: { searchCount: 1 } }
+    );
+
+  } catch (error) {
+    console.log(error.message);
+  }
+
   try {
     // ! If req.param.symbol exists, assign it to be the value of req.body.symbol
     if (req.params.symbol) {
@@ -52,7 +63,9 @@ const searchStock = async (req, res) => {
         let newStock = await Stock.create(result);
         result._id = newStock._id;
       } catch (error) {
-        res.status(500).json({message: `Ticker symbol doesn't exist! Please try again`})
+        res
+          .status(500)
+          .json({ message: `Ticker symbol doesn't exist! Please try again` });
       }
     }
   } catch (error) {

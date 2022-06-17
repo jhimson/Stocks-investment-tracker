@@ -10,7 +10,7 @@ const renderDashboardPage = async (req, res) => {
     const transactionsCount = await Transaction.find({
       user: req.session._id,
     }).count();
-    const stocks = await Stock.find({}).limit(4);
+    const stocks = await Stock.find({}).sort({searchCount: -1}).limit(3);
 
     res.render('dashboard/index', {
       username: req.session.username,
@@ -23,5 +23,4 @@ const renderDashboardPage = async (req, res) => {
     res.sendStatus(500).json({ message: error.message });
   }
 };
-
 module.exports = { renderDashboardPage };

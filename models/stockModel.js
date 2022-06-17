@@ -39,6 +39,9 @@ const stockSchema = new Schema(
     fiftyTwoWeekLow: {
       type: Number,
     },
+    searchCount: {
+      type: Number,
+    }
   },
   { timestamps: true }
 );
