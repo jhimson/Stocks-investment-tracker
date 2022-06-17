@@ -16,7 +16,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - Be able to view all the watchlist that has been created by the user.
 - Be able to add/remove stocks from any watchlist created by the user.
 - Cannot view/update/delete other records of a different users.
-- Be able to look up a specific stock that user is interested to learn more about the company. (Using stocks API)
+- Be able to look up a specific stock that user is interested to learn more about the company. (Using stocks API).
+- Be able to search a watchlist by name.
 
 
 ## Wireframes:
@@ -75,6 +76,7 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 |:----|:-----|:--------|:-----|
 |INDEX |/watchlists|GET       |Shows all the watchlist of the user loggedIn|
 |NEW |/watchlists/new|POST    |Renders the new watchlist form|
+|SHOW |/watchlists/search|POST    |Shows one watchlist with the given ID|
 |EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
 |CREATE |/watchlists/|POST    |Creates a new watchlist|
 |UPDATE |/watchlists/edit/:id|PUT    |Updates the wathclist with the given ID|
