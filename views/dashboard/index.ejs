@@ -15,7 +15,7 @@
         Welcome, <%= username[0].toUpperCase() + username.slice(1) %>
       </h1>
     </div>
-    <div class="gap-x-8 flex flex-wrap items-start gap-y-8 p-2">
+    <div class="gap-x-8 flex flex-wrap justify-between items-start gap-y-8 p-2">
       <%- include('../partials/components/dashboardCard', {title: `Total
       Assets`, total:`$${totalAssets}`, icon: 'money' , link: '/transactions',
       background:'bg-green-700',hover:'bg-green-600'}); -%> <%-
@@ -27,6 +27,14 @@
       '/transactions',background:'bg-slate-800',hover:'bg-slate-700'}); -%> -%>
     </div>
     <!-- </div> -->
+    <div
+      class="flex justify-between bg-gray-100 m-2 p-4 items-center rounded-xl border-2 border-gray-200 mb-2 mt-8"
+    >
+      <h1 class="text-2xl font-bold">Most Viewed Stocks</h1>
+    </div>
+    <div class="flex p-4 mb-8">
+      <%- include('../partials/components/mostViewedStocksTable', {stocks}); -%>
+    </div>
   </section>
 </div>
 <%- include('../partials/footer'); -%>
