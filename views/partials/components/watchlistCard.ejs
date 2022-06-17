@@ -50,7 +50,9 @@
             />
           </div>
           <div><%= stock.symbol %></div>
-          <div class="text-green-500">$<%= stock.price %></div>
+          <div class="text-green-500">
+            $<%= parseFloat(stock.price).toFixed(2) %>
+          </div>
           <div class="flex gap-x-4 items-center">
             <a href="/stocks/search/<%= stock.symbol %>">
               <svg
