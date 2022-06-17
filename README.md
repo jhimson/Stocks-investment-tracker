@@ -75,6 +75,7 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 |:----|:-----|:--------|:-----|
 |INDEX |/watchlists|GET       |Shows all the watchlist of the user loggedIn|
 |NEW |/watchlists/new|POST    |Renders the new watchlist form|
+|SHOW |/watchlists/search|POST    |Shows one watchlist with the given ID|
 |EDIT |/watchlists/edit/:id|GET    |Shows the form for the user to edit the watchlist|
 |CREATE |/watchlists/|POST    |Creates a new watchlist|
 |UPDATE |/watchlists/edit/:id|PUT    |Updates the wathclist with the given ID|
