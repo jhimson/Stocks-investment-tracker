@@ -9,7 +9,7 @@ const middleware = require('./utils/middleware');
 const transactionsRoute = require('./routes/transactionsRoutes');
 const usersRoute = require('./routes/usersRoutes');
 const watchlistsRoute = require('./routes/watchlistsRoutes');
-const apiRoute = require('./routes/apiRoutes');
+const stocksRoute = require('./routes/stocksRoutes');
 const dashboardRoute = require('./routes/dashboardRoutes');
 const newsRoute = require('./routes/newsRoutes');
 
@@ -42,7 +42,7 @@ app.get('/login', (req, res) => {
 app.use('/transactions', transactionsRoute);
 app.use('/users', usersRoute);
 app.use('/watchlists', watchlistsRoute);
-app.use('/stocks', apiRoute);
+app.use('/stocks', stocksRoute);
 app.use('/dashboard', dashboardRoute);
 app.use('/news', newsRoute);
 
