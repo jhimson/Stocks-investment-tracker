@@ -1,4 +1,4 @@
-<div class="flex flex-col mx-4">
+<!-- <div class="flex flex-col mx-4">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -113,6 +113,106 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="flex flex-col mx-4">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <table class="min-w-full leading-normal">
+        <thead>
+          <tr>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Company
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Symbol
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Type
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Price
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Quantity
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Date
+            </th>
+            <th
+              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+            >
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% transactions.forEach(({_id, name, tickerSymbol, type, stockPrice,
+          quantity,date, logo}) => { %>
+          <tr>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap"><%= name %></p>
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p class="text-gray-900 whitespace-no-wrap">
+                <%= tickerSymbol %>
+              </p>
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <p
+                class="text-gray-900 whitespace-no-wrap <%= type === 'Buy' ? 'text-green-600' : 'text-red-600' %>"
+              >
+                <%= type %>
+              </p>
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              $<%= stockPrice %>
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <%= quantity %>
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <%= date.toLocaleDateString() %>
+            </td>
+            <td
+              class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex gap-x-4"
+            >
+              <a href="transactions/edit/<%= _id %>"
+                ><button
+                  class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded cursor-pointer"
+                >
+                  Update
+                </button></a
+              >
+              <form
+                action="transactions/<%= _id %>?_method=DELETE"
+                method="POST"
+              >
+                <input
+                  class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded cursor-pointer"
+                  type="submit"
+                  value="Delete"
+                />
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
