@@ -5,14 +5,16 @@
     class="w-screen h-screen p-4 bg-gray-50 border-2 border-gray-200 rounded-lg lg:ml-2 mt-4 lg:mr-4"
   >
     <div
-      class="flex justify-between bg-gray-100 m-2 p-6 items-center rounded-xl border-2 border-gray-200 mb-8"
+      class="flex flex-col gap-y-4 lg:flex-row justify-between bg-gray-100 m-2 p-6 items-center rounded-xl border-2 border-gray-200 mb-8"
     >
-      <h1 class="text-xl lg:text-4xl font-bold">Dashboard</h1>
+      <h1 class="text-2xl lg:text-4xl font-bold">Dashboard</h1>
       <h1 class="text-md lg:text-2xl font-bold">
         Welcome, <%= username[0].toUpperCase() + username.slice(1) %>
       </h1>
     </div>
-    <div class="gap-x-8 flex flex-wrap justify-between items-start gap-y-8 p-2">
+    <div
+      class="gap-x-8 flex flex-wrap justify-center lg:justify-between items-start gap-y-8 p-2"
+    >
       <%- include('../partials/components/dashboardCard', {title: `Total
       Assets`, total:`$${totalAssets}`, icon: 'money' , link: '/transactions',
       background:'bg-green-700',hover:'bg-green-600'}); -%> <%-
