@@ -40,6 +40,12 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 
 
+### Watchlists Page:
+![WatchlistPage](https://user-images.githubusercontent.com/42398487/174592283-1bc3fe6a-87c0-4e80-bf0b-cf44edcb1aaf.png)
+
+
+
+
 
 
 
