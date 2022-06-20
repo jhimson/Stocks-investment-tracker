@@ -1,4 +1,8 @@
 <%- include('../partials/header', {title: 'Dashboard Page'}); -%>
+<div class="lg:hidden">
+  <%- include('../partials/components/navbar', {active: 'dashboard',
+  authenticated: true}); -%>
+</div>
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'dashboard'}); -%>
   <section
