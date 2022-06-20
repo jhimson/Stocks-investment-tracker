@@ -1,4 +1,4 @@
-<table class="min-w-full leading-normal">
+<table class="w-full leading-normal">
   <thead>
     <tr>
       <th
@@ -14,7 +14,7 @@
       <th
         class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
       >
-        Ticker Symbol
+        Symbol
       </th>
       <th
         class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
@@ -53,25 +53,37 @@
             </div></div
         ></a>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap"><%= stock.name %></p>
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
+        <p class="text-gray-900"><%= stock.name %></p>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap"><%= stock.symbol %></p>
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
+        <p class="text-gray-900"><%= stock.symbol %></p>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p class="text-gray-900 whitespace-no-wrap">
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
+        <p class="text-gray-900">
           $<%= stock.marketCap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
           %>
         </p>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
         $<%= parseFloat(stock.price).toFixed(2) %>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
         $<%= parseFloat(stock.fiftyTwoWeekHigh).toFixed(2) %>
       </td>
-      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+      <td
+        class="px-5 py-5 border-b border-gray-200 bg-white text-sm whitespace-no-wrap"
+      >
         $<%= parseFloat(stock.fiftyTwoWeekLow).toFixed(2) %>
       </td>
     </tr>

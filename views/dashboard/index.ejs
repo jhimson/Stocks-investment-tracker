@@ -2,13 +2,13 @@
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'dashboard'}); -%>
   <section
-    class="w-full p-4 bg-gray-50 border-2 border-gray-200 rounded-lg ml-2 mt-4 mr-4"
+    class="w-screen h-screen p-4 bg-gray-50 border-2 border-gray-200 rounded-lg lg:ml-2 mt-4 lg:mr-4"
   >
     <div
       class="flex justify-between bg-gray-100 m-2 p-6 items-center rounded-xl border-2 border-gray-200 mb-8"
     >
-      <h1 class="text-4xl font-bold">Dashboard</h1>
-      <h1 class="text-2xl font-bold">
+      <h1 class="text-xl lg:text-4xl font-bold">Dashboard</h1>
+      <h1 class="text-md lg:text-2xl font-bold">
         Welcome, <%= username[0].toUpperCase() + username.slice(1) %>
       </h1>
     </div>
@@ -23,13 +23,18 @@
       'Transactions',total:totalTransactions, icon: 'trans', link:
       '/transactions',background:'bg-slate-800',hover:'bg-slate-700'}); -%> -%>
     </div>
-    <div
-      class="flex justify-between bg-gray-100 m-2 p-4 items-center rounded-xl border-2 border-gray-200 mb-2 mt-8"
-    >
-      <h1 class="text-2xl font-bold">Top 3 Most Viewed Stocks</h1>
-    </div>
-    <div class="flex p-4 mb-8">
-      <%- include('../partials/components/mostViewedStocksTable', {stocks}); -%>
+
+    <!-- ! TOP 3 VIEWED STOCKS DIV -->
+    <div>
+      <div
+        class="flex justify-between bg-gray-100 m-2 p-4 items-center rounded-xl border-2 border-gray-200 mb-2 mt-8"
+      >
+        <h1 class="text-xl lg:text-2xl font-bold">Top 3 Most Viewed Stocks</h1>
+      </div>
+      <div class="flex mb-4 lg:p-4 lg:mb-8 overflow-auto">
+        <%- include('../partials/components/mostViewedStocksTable', {stocks});
+        -%>
+      </div>
     </div>
   </section>
 </div>
