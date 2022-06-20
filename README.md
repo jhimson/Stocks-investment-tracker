@@ -46,6 +46,13 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 
 
 
+### Transactions Page:
+![TransactionsPage](https://user-images.githubusercontent.com/42398487/174592498-2a67850b-b918-4daf-a08a-e4a7b1bfb8f9.png)
+
+
+
+
+
 
 
 
