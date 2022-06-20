@@ -26,11 +26,9 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 ### Login Page:
 
 #### Desktop View
-![image](https://user-images.githubusercontent.com/42398487/174591138-c1f46f41-f3cc-456d-afa9-c2f92ab11c61.png)
+![image](https://user-images.githubusercontent.com/42398487/174591138-c1f46f41-f3cc-456d-afa9-c2f92ab11c61.png) ![image](https://user-images.githubusercontent.com/42398487/174591332-d85cc79f-712f-49e9-a9b1-85bcad44fb87.png)
 
 
-#### Mobile View
-![image](https://user-images.githubusercontent.com/42398487/174591332-d85cc79f-712f-49e9-a9b1-85bcad44fb87.png)
 
 
 
