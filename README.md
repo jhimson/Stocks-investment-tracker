@@ -125,4 +125,4 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 - [x] Responsive design
 - [ ] Add a userProfile Schema and page so other users can view the watchlists of other users.
 - [ ] Implement OAuth authentication to be able to login using their google account.
-- [ ] Refactor using ReactJS
+- [ ] Refactor front-end using ReactJS
