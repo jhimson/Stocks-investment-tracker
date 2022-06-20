@@ -8,6 +8,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const cancelBtn = document.querySelector('#cancelBtn');
   const updateWatchlist = document.querySelector('#updateWatchlist');
 
+  // ! NAVBAR
+  const navButtonsDiv = document.querySelector('#navButtons');
+  const hamburger = document.querySelector('#hamburger');
+
   if (updateWatchlist) {
     updateWatchlist.addEventListener('click', () => {
       overlay.classList.remove('hidden');
@@ -17,6 +21,12 @@ window.addEventListener('DOMContentLoaded', () => {
   if (cancelBtn) {
     cancelBtn.addEventListener('click', () => {
       overlay.classList.add('hidden');
+    });
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      navButtonsDiv.classList.toggle('hidden');
     });
   }
 
