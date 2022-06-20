@@ -41,6 +41,7 @@ const stockSchema = new Schema(
     },
     searchCount: {
       type: Number,
+      default: 0
     }
   },
   { timestamps: true }
