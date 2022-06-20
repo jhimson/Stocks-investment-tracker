@@ -1,5 +1,8 @@
 <%- include('../partials/header', {title: 'News Page'}); -%>
-
+<div class="lg:hidden">
+  <%- include('../partials/components/navbar', {active: 'news', authenticated:
+  true}); -%>
+</div>
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'News'}); -%>
   <section class="w-auto h-screen p-4 mr-4">

@@ -26,18 +26,39 @@
       <% if(authenticated === false) { %>
       <a
         href="/login"
-        class="inline-block text-sm px-4 w-1/2 lg:w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'login' ? 'bg-blue-700 text-white font-bold' : null %>"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'login' ? 'bg-blue-700 text-white font-bold' : null %>"
         >Login</a
       >
       <a
         href="/signup"
-        class="inline-block text-sm px-4 w-1/2 lg:w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'signup' ? 'bg-blue-700 text-white font-bold' : null %>"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'signup' ? 'bg-blue-700 text-white font-bold' : null %>"
         >Signup</a
       >
-      <% } %> <% if(authenticated) { %>
+      <!-- !Only show these navs when user is loggedIn -->
+      <% } %> <% if(authenticated) { %> <%- include('./searchBar'); -%>
+      <a
+        href="/dashboard"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'dashboard' ? 'bg-blue-700 text-white font-bold' : null %>"
+        >Dashboard</a
+      >
+      <a
+        href="/watchlists"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'watchlist' ? 'bg-blue-700 text-white font-bold' : null %>"
+        >Watchlist</a
+      >
+      <a
+        href="/transactions"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'transactions' ? 'bg-blue-700 text-white font-bold' : null %>"
+        >Transactions</a
+      >
+      <a
+        href="/news"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'news' ? 'bg-blue-700 text-white font-bold' : null %>"
+        >News</a
+      >
       <a
         href="/users/logout"
-        class="inline-block text-sm px-4 w-1/2 lg:w-full text-center tracking-widest py-2 leading-none border rounded text-white border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'signup' ? 'bg-blue-700 text-white font-bold' : null %>"
+        class="inline-block text-sm px-4 w-full text-center tracking-widest py-2 leading-none border rounded text-red-500 border-white hover:text-white hover:bg-blue-700 mt-4 lg:mt-0 <%= active === 'signup' ? 'bg-blue-700 text-white font-bold' : null %>"
         >Logout</a
       >
       <% } %>

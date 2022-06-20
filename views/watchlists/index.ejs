@@ -1,5 +1,8 @@
 <%- include('../partials/header', {title: 'Watchlists Page'}); -%>
-
+<div class="lg:hidden">
+  <%- include('../partials/components/navbar', {active: 'watchlist',
+  authenticated: true}); -%>
+</div>
 <div class="flex w-screen h-screen">
   <%- include('../partials/components/sidenav', {active: 'Watchlists'}); -%>
   <section class="w-full h-screen p-4 mr-4">
