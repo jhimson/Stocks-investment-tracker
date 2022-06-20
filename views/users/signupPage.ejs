@@ -1,6 +1,7 @@
 <%- include('../partials/header', {title: 'Account Signup'}); -%>
 <header>
-  <%- include('../partials/components/navbar', {active:'signup'}); -%>
+  <%- include('../partials/components/navbar', {active:'signup', authenticated:
+  false}); -%>
 </header>
 <%- include('../partials/components/signupForm') -%>
 <%-include('../partials/footer'); -%>
