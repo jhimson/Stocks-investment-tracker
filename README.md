@@ -4,7 +4,7 @@
 ## Premise:
 TheHood is a robinhood inspired Full-Stack web application but way less functionalities than robinhood. It is a stocks investment tracker application that will allow users to keep track all their buy and sell transactions of stocks. Users can also create a watchlist and can add as many stocks as they want in the watchlist. Users can also check news headlines.
 
-[Live Preview](https://thehoodapp.herokuapp.com/)
+[Live Preview - TheHood](https://thehoodapp.herokuapp.com/)
 
 ## User Story
 
@@ -69,7 +69,8 @@ TheHood is a robinhood inspired Full-Stack web application but way less function
 <br/>
 
 ## Entity Relationship Diagram (ERD):
-![ERD V2](https://user-images.githubusercontent.com/42398487/174279849-be1fb973-4b65-4c4c-b027-d38be4780b50.png)
+![ERD V2](https://user-images.githubusercontent.com/42398487/174595221-90bfd90a-f102-4185-9354-3e778c283268.png)
+
 
 
 
